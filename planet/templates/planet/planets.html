@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <a href=""></a>
+            </ul>
+        </nav>
+    </header>
+
+    <body>
+        <main>
+          <h1>All planets discovered</h1>
+          <div class="content">
+            {% for item in planets %}
+            <div>
+               <a href="{% url 'planet_detail' item.id %}"><img src="{{item.image}}" alt=""> </a> 
+               <a href="{% url 'planet_detail' item.id %}"> <h3>{{item.name}}</h3></a> 
+            </div>
+            {%endfor%}
+          </div>
+        </main>
+    </body>
+</body>
+</html>
