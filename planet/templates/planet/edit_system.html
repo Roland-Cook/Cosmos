@@ -11,20 +11,19 @@
 </head>
 <body>
     <header>
-        <nav id="navbar">
-            <ul id="navbar-items">
+        <nav id="navbar"> 
+            <ul id="navbar-itmes">
             <a href="{% url 'planets_view' %}">Home</a>
             <a href="{% url 'all_systems' %}">All Systems</a>
             </ul>
         </nav>
         <hr/>
-        
     </header>
     <main>
         <form method="post">
             {% csrf_token %}
-            {{ form.as_p }}
-            <button>Create</button>
+            {{ post_form.as_p }}
+            <button>Update</button>
           </form>
     </main>   
     <footer>

@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect, get_list_or_404
 from planet.models import Planet, PlanetSystem
-from planet.forms import PlanetForm, LoginForm, SignUpForm
+from planet.forms import PlanetForm, LoginForm, SignUpForm, SystemForm, EditPlanetForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.models import User
@@ -94,3 +94,52 @@ def all_systems(request):
         "systems" : all_systems
     }
     return render(request, "planet/all_systems.html", context)
+
+@login_required
+def create_system(request):
+    if request.method=="POST":
+        form = SystemForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("all_systems")
+    else:
+        form = SystemForm()
+    context={
+        "form":form
+            }
+    return render(request,"planet/create_system.html",context)
+
+
+@login_required
+def edit_planet(request,id):
+    post =get_object_or_404(Planet.objects,id=id)
+    if request.method == "POST":
+        form = EditPlanetForm(request.POST, instance=post)
+        if form.is_valid():
+            form.save()
+            return redirect("planet_detail",id=id)
+    else:
+        form =EditPlanetForm(instance=post)
+
+    context={
+        "post_object":post,
+        "post_form":form,
+    }
+    return render(request, "planet/edit_planet.html",context)
+
+@login_required
+def edit_system(request,id):
+    post =get_object_or_404(PlanetSystem.objects,id=id)
+    if request.method == "POST":
+        form = SystemForm(request.POST, instance=post)
+        if form.is_valid():
+            form.save()
+            return redirect("systems",id=id)
+    else:
+        form =SystemForm(instance=post)
+
+    context={
+        "post_object":post,
+        "post_form":form,
+    }
+    return render(request, "planet/edit_system.html",context)

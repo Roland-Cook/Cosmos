@@ -4,7 +4,11 @@ from django.db import models
 
 class PlanetSystem(models.Model):
     name = models.CharField(max_length=100)
+    description = models.CharField(max_length=500, null=True)
     image = models.URLField(default=True)
+
+    def __str__(self):
+        return self.name
 
 
 
@@ -13,4 +17,4 @@ class Planet(models.Model):
     description = models.TextField()
     image = models.URLField()
     discovered_by = models.CharField(max_length=100)
-    planets = models.ForeignKey(PlanetSystem, related_name="planets", on_delete=models.CASCADE, default=True)
+    systems = models.ForeignKey(PlanetSystem, related_name="planets", on_delete=models.CASCADE, null=True)

@@ -1,5 +1,5 @@
 from django.forms import ModelForm
-from planet.models import Planet
+from planet.models import Planet, PlanetSystem
 from django import forms
 
 
@@ -11,8 +11,34 @@ class PlanetForm(ModelForm):
             "name",
             "image",
             "description",
-            "discovered_by"
+            "discovered_by",
+            "systems"
         ]
+
+
+class SystemForm(ModelForm):
+    class Meta:
+        model = PlanetSystem
+        fields = [
+            "name",
+            "image",
+            "description"
+        ]
+
+
+class EditPlanetForm(ModelForm):
+    class Meta:
+        model=Planet
+        fields=[
+            "name",
+            "image",
+            "description",
+            "discovered_by",
+            "systems"
+        ]
+
+
+
 
 
 class LoginForm(forms.Form):
