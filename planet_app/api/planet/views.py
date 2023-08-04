@@ -33,7 +33,7 @@ def view_planets(request):
     if request.method == "GET":
         Planets = Planet.objects.all()
         return JsonResponse(
-            {"Planets": Planets},
+            {"planets": Planets},
             encoder=PlanetEncoder,
         )
     else:
@@ -58,7 +58,7 @@ def view_planets(request):
 
 # get details or delete planets based on ids
 
-@require_http_methods(["GET", "DELETE"])
+@require_http_methods(["GET", "DELETE","PUT"])
 def planet_detail(request, id):
     if request.method == "GET":
         planet = Planet.objects.get(id=id)
@@ -67,10 +67,25 @@ def planet_detail(request, id):
             encoder=PlanetEncoder,
             safe=False,
         )
-    else:
+    elif request.method=="DELETE":
         count, _ = Planet.objects.filter(id=id).delete()
         return JsonResponse({"deleted": count > 0})
-     
+    else:
+        content = json.loads(request.body)
+        Planet.objects.filter(id=id).update(**content)
+        planet = Planet.objects.get(id=id)
+        return JsonResponse(
+        planet,
+        encoder=PlanetEncoder,
+        safe=False,
+        )
+        
+        
+
+
+
+
+
 
 
 @require_http_methods(["GET", "POST"])
@@ -97,7 +112,7 @@ def view_systems(request):
                 status=400,
                 ) 
 
-@require_http_methods(["GET", "DELETE"])
+@require_http_methods(["GET", "DELETE","PUT"])
 def system_detail(request, id):
     if request.method == "GET":
         system = PlanetSystem.objects.get(id=id)
@@ -106,9 +121,21 @@ def system_detail(request, id):
             encoder=SystemEncoder,
             safe=False,
         )
-    else:
+    elif request.method=="DELETE":
         count, _ = PlanetSystem.objects.filter(id=id).delete()
         return JsonResponse({"deleted": count > 0})
+    else:
+        content = json.loads(request.body)
+        PlanetSystem.objects.filter(id=id).update(**content)
+        system = PlanetSystem.objects.get(id=id)
+        return JsonResponse(
+        system,
+        encoder=SystemEncoder,
+        safe=False,
+        )
+        
+
+
 
 # def view_planets(request):
 #     planets = Planet.objects.all()
