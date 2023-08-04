@@ -1,0 +1,46 @@
+{% comment %} {% load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static "css/planet.css" %}">
+  </head>
+  <body>
+    
+    <header>
+      <nav id="navbar">
+        <ul id="navbar-items">
+          {% if user.is_authenticated %}
+          <a href="{% url 'create_system' %}">Create System</a>
+          <a href="{% url 'logout' %}">Logout</a>
+          {% endif%}
+          
+          <a href="{% url 'planets_view' %}">Home</a>
+        </ul>
+      </nav>
+      <hr/>
+    </header>
+    <main>
+      <div class="main-systems">
+        {% for item in systems.all %}
+        <div class="system-card">
+          <a href="{%  url 'systems' item.id %}"> <h1>{{item.name}} </h1></a>
+          <a href="{%  url 'systems' item.id %}"> <img src="{{item.image}}" /> </a>
+        </div>
+
+        {%endfor%}
+      </div>
+      
+      <div id="system-description">
+
+      <p>A planetary system consists of a set of non-stellar objects orbiting a star or star system. The non-stellar objects are kept in orbit by gravity. Examples of non-stellar objects include planets, dwarf planets, and asteroids. Our planetary system is known as the solar system, consisting of eight planets orbiting a star, the Sun.
+      </p>
+
+    </div>
+    </main>
+  </body>
+</html> {% endcomment %}

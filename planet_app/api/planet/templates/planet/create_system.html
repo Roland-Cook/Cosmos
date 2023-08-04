@@ -1,0 +1,33 @@
+{% comment %} {% load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static "css/planet.css" %}">
+</head>
+<body>
+    <header>
+        <nav id="navbar"> 
+            <ul id="navbar-itmes">
+            <a href="{% url 'planets_view' %}">Home</a>
+            <a href="{% url 'all_systems' %}">All Systems</a>
+            </ul>
+        </nav>
+        <hr/>
+    </header>
+    <main>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button>Create</button>
+          </form>
+    </main>   
+    <footer>
+        Created by Roland 2023
+    </footer> 
+</body>
+</html> {% endcomment %}
