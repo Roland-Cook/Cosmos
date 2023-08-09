@@ -5,7 +5,7 @@ from planet.views import view_planets, view_systems, planet_detail, system_detai
 urlpatterns = [
     path("planets_list/", view_planets, name="planets_view"),
     path("systems_list/", view_systems, name="create_system"),
-    path("planet_detail/<int:id>/", planet_detail, name="planet_detail"),
+    path("planet_detail/<str:name>/", planet_detail, name="planet_detail"),
     path("system_detail/<int:id>/", system_detail, name="system_detail"),
 
 

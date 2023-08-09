@@ -7,8 +7,8 @@ function PlanetList() {
 
 
     async function loadPlanets() {
-        const response = await fetch('http://localhost:8100/planets/planets_list/');
-
+        const response = await fetch('http://localhost:8100/api/planets_list/');
+        console.log(response)
 
         if (response.ok) {
           const data = await response.json();
@@ -31,6 +31,10 @@ function PlanetList() {
             <thead>
               <tr>
                 <th>Planet Name</th>
+                <th>Planet Mass</th>
+                <th>Planet System</th>
+
+
 
               </tr>
             </thead>
@@ -40,6 +44,9 @@ function PlanetList() {
                 <>
                   <tr>
                     <td>{planet.name}</td>
+                    <td>{planet.mass}</td>
+                    <td>{planet.system.name}</td>
+
                     </tr>
                   
   

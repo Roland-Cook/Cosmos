@@ -20,5 +20,5 @@ from planet.urls import urlpatterns
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("planets/", include(urlpatterns))
+    path("api/", include(urlpatterns))
 ]

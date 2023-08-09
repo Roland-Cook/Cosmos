@@ -7,7 +7,7 @@ function SystemList() {
 
 
     async function loadSystems() {
-        const response = await fetch('http://localhost:8100/planets/systems_list/');
+        const response = await fetch('http://localhost:8100/api/systems_list/');
 
 
         if (response.ok) {

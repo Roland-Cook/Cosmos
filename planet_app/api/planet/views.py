@@ -59,7 +59,7 @@ def view_planets(request):
 # get details or delete planets based on ids
 
 @require_http_methods(["GET", "DELETE","PUT"])
-def planet_detail(request, id):
+def planet_detail(request, name):
     if request.method == "GET":
         planet = Planet.objects.get(id=id)
         return JsonResponse(
@@ -68,12 +68,12 @@ def planet_detail(request, id):
             safe=False,
         )
     elif request.method=="DELETE":
-        count, _ = Planet.objects.filter(id=id).delete()
+        count, _ = Planet.objects.filter(name=name).delete()
         return JsonResponse({"deleted": count > 0})
     else:
         content = json.loads(request.body)
-        Planet.objects.filter(id=id).update(**content)
-        planet = Planet.objects.get(id=id)
+        Planet.objects.filter(name=name).update(**content)
+        planet = Planet.objects.get(name=name)
         return JsonResponse(
         planet,
         encoder=PlanetEncoder,

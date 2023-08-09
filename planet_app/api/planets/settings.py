@@ -31,7 +31,6 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     "planet.apps.PlanetConfig",
-    "corsheaders",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -51,11 +50,11 @@ MIDDLEWARE = [
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    "http://localhost:3000", "http://localhost:8000","http://localhost:8100"
+    "http://localhost:3000", "http://localhost:8000","http://localhost:8100",
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000", "http://localhost:8000","http://localhost:8100"
+    "http://localhost:3000", "http://localhost:8000","http://localhost:8100",
 ]
 
 CORS_ALLOW_CREDENTIALS = True
