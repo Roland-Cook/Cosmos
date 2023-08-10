@@ -13,9 +13,6 @@ const [discovered,setDiscovered] = useState('');
 const [systems,setSystems] = useState([]);
 const [planets,setPlanets] = useState([]);
 const [system,setSystem] = useState('');
-const [currentPlanet,SetCurrentPlanet] = useState('')
-
-
 
 
 
@@ -118,25 +115,13 @@ const fetchData = async () => {
     }
   }
 
-  const fetchPlanet = async (planetName) => {
-    const url = `http://localhost:8100/api/planet_detail/${planetName}`;
-
-    const response = await fetch(url);
-
-
-    if (response.ok) {
-      const data = await response.json();
-    }
-  }
 
 
   useEffect(() => {
     fetchData();
   }, []);
 
-  let planet = planets.map(planet => {
-    return planet
-  })
+
 
 
 return (

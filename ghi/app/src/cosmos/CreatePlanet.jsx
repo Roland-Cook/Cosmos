@@ -15,8 +15,6 @@ const [system,setSystem] = useState('');
 
 
 
-
-
 const handleNameChange = (event) => {
     const value = event.target.value;
     setName(value);
@@ -113,9 +111,12 @@ const fetchData = async () => {
 
 
 return (
+  <>
     <div className="row">
     <div className="offset-3 col-6">
+      
       <div className="">
+        
         <h1 style={{color:"white"}}>Create a Planet</h1>
         <form onSubmit={handleSubmit} id="planet-form">
           <div className="form-floating mb-3">
@@ -141,7 +142,9 @@ return (
           <div className="form-floating mb-3">
             <input onChange={handleImageChange} type="url" value={image} placeholder="Image URL" required name={image} id="reason" className="form-control"/>
             <label htmlFor="picture_url">Image URL </label>
-          </div>
+  
+
+</div>
           <div className="form-floating mb-3">
             <textarea onChange={handleDescriptionChange}  value={description} placeholder="Description of planet..."  name={description} id="" className="form-control"/>
             <label >Description </label>
@@ -165,6 +168,7 @@ return (
       </div>
     </div>
   </div>
+  </>
 );
 };
 
