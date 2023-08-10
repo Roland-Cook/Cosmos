@@ -44,7 +44,6 @@ function NavBar() {
                         <div class="icon"><i class="fal fa-wind-turbine"></i></div>
                         <div class="text">
                             <div class="title">  <NavLink className="nav-link" to="/createplanet">Create Planet <i class="far fa-arrow-right"></i> </NavLink></div>
-                       
                         </div>
                     </div>
                     <div class="icon-box">

@@ -349,9 +349,6 @@ nav .menu-item.highlight:hover ~ #sub-menu-container #sub-menu-holder #sub-menu-
 
 
 
-
-
-
 #main-title {
     color: white;
     margin: 40px 40px -10px 40px;
@@ -381,14 +378,17 @@ nav .menu-item.highlight:hover ~ #sub-menu-container #sub-menu-holder #sub-menu-
 
 
 form {
-    background: rgba(255,255,255,0.3);
+    align-items: center;
+    margin: auto auto;
+    background: rgba(255, 255, 255, 0.13);
     padding: 3em;
     height: 320px;
+    width: 650px;
     border-radius: 20px;
-    border-left: 1px solid rgba(255,255,255,0.3);
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
     border-top: 1px solid rgba(255,255,255,0.3);
-    backdrop-filter: blur(10px);
-    box-shadow: 20px 20px 40px -6px rgba(0,0,0,0.2);
+    backdrop-filter: blur(3px);
+    box-shadow: 10px 10px 20px -6px rgba(0,0,0,0.2);
     text-align: center;
     position: relative;
     transition: all 0.2s ease-in-out;

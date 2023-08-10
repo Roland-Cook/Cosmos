@@ -4,6 +4,8 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.7.16",
-    "@heroicons/react": "^2.0.18"
+    "@heroicons/react": "^2.0.18",
+    "node-sass": "^9.0.0",
+    "sass": "^1.65.1"
   }
 }

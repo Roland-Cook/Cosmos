@@ -5,18 +5,74 @@ import MainPage from "./MainPage";
 import NavBar from "./Nav";
 import CreatePlanet from "./cosmos/CreatePlanet";
 import EditPlanet from "./cosmos/EditPlanet"
-// import "./Style.css"
+import "./Style.css"
+import "./scss/style.scss"
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 
 function App() {
   return (
+    <>
+    <div class="stars">
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+</div>
+    
     <div className="container"> 
     <h1 id="main-title">Cosmos</h1>
     <BrowserRouter>
     <NavBar className="main-navbar"/>
     <Routes>
+      
       <Route path="/createPlanet" element={<CreatePlanet/>}/> 
       <Route path="/" element={<MainPage/>}/>
       <Route path="/planetList" element={<PlanetList/>}/>
@@ -25,6 +81,8 @@ function App() {
       </Routes>
     </BrowserRouter>
     </div>
+    
+    </>
   );
 }
 

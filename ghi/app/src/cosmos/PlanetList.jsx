@@ -1,4 +1,4 @@
-import "./card.css"
+import "./card.scss"
 
 import { useEffect, useState } from "react";
 import React, { Component } from "react";
@@ -47,14 +47,13 @@ function PlanetList() {
             {planets.map(planet  => {
               return (
                 <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src={planet.image} />
+                <Card.Img variant="top" src={planet.image}  />
                 <Card.Body>
                   <Card.Title>{planet.name}</Card.Title>
                   <Card.Text>
-                    
                     {planet.description}
                   </Card.Text>
-                  <Button onClick={() => handleDelete(planet.name)}>Delete Planet</Button>
+                  <Button className="card-button" onClick={() => handleDelete(planet.name)}>Delete Planet</Button>
                 </Card.Body>
               </Card>
                 );
