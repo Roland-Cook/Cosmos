@@ -16,7 +16,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
+ 
 img{
   display: flex;
   align-items: center;
@@ -24,4 +24,3 @@ img{
   justify-content: center;
   max-width: 70%;
 }
-

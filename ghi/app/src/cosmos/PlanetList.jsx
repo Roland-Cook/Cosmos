@@ -1,4 +1,9 @@
+import "./card.css"
+
 import { useEffect, useState } from "react";
+import React, { Component } from "react";
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
 
 function PlanetList() {
 
@@ -20,41 +25,42 @@ function PlanetList() {
 
     useEffect(() => {
         loadPlanets();
-    }, []);
+    }, [planets]);
 
 
+    const handleDelete = async (planetName) => {
+      const hatUrl = `http://localhost:8100/api/planet_detail/${planetName}/`
+      console.log(hatUrl, planetName)
+      const fetchConfig = {
+          method: "DELETE",
+      }
+      const response = await fetch(hatUrl, fetchConfig);
+      if (response.ok) {
+      } else {
+          console.error('Failed to delete')
+      }
+  }
 
     return (
       <>
-          <h1>Planets</h1>
-          <table className='table table-dark table-striped table-hover'>
-            <thead>
-              <tr>
-                <th>Planet Name</th>
-                <th>Planet Mass</th>
-                <th>Planet System</th>
-
-
-
-              </tr>
-            </thead>
-            <tbody>
+          <div className="f-container">
             {planets.map(planet  => {
               return (
-                <>
-                  <tr>
-                    <td>{planet.name}</td>
-                    <td>{planet.mass}</td>
-                    <td>{planet.system.name}</td>
-
-                    </tr>
-                  
-  
-                </>
+                <Card style={{ width: '18rem' }}>
+                <Card.Img variant="top" src={planet.image} />
+                <Card.Body>
+                  <Card.Title>{planet.name}</Card.Title>
+                  <Card.Text>
+                    
+                    {planet.description}
+                  </Card.Text>
+                  <Button onClick={() => handleDelete(planet.name)}>Delete Planet</Button>
+                </Card.Body>
+              </Card>
                 );
+              
     })}
-            </tbody>
-          </table>
+    </div>
           </>
     )
     }

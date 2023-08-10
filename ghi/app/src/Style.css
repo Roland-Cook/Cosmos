@@ -348,9 +348,13 @@ nav .menu-item.highlight:hover ~ #sub-menu-container #sub-menu-holder #sub-menu-
 
 
 
+
+
+
+
 #main-title {
     color: white;
-    margin: 50px;
+    margin: 40px 40px -10px 40px;
 }
 
 .icon-box{
@@ -359,8 +363,13 @@ nav .menu-item.highlight:hover ~ #sub-menu-container #sub-menu-holder #sub-menu-
 
 
 .space{
-    margin-bottom: 70px;
+    margin-bottom: 90px;
 }
+
+.list-space{
+    margin-bottom: 90px;
+}
+
 
 
 .nav-link{
@@ -368,4 +377,29 @@ nav .menu-item.highlight:hover ~ #sub-menu-container #sub-menu-holder #sub-menu-
 }
 .nav-link:hover{
     color: rgb(83, 83, 83) !important;
+}
+
+
+form {
+    background: rgba(255,255,255,0.3);
+    padding: 3em;
+    height: 320px;
+    border-radius: 20px;
+    border-left: 1px solid rgba(255,255,255,0.3);
+    border-top: 1px solid rgba(255,255,255,0.3);
+    backdrop-filter: blur(10px);
+    box-shadow: 20px 20px 40px -6px rgba(0,0,0,0.2);
+    text-align: center;
+    position: relative;
+    transition: all 0.2s ease-in-out;
+    margin-bottom:100px ;
+}
+
+
+#planet-form{
+    height: 100%;
+}
+
+.row{
+    margin-bottom: 100px !important;
 }

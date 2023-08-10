@@ -5,7 +5,7 @@ import MainPage from "./MainPage";
 import NavBar from "./Nav";
 import CreatePlanet from "./cosmos/CreatePlanet";
 import EditPlanet from "./cosmos/EditPlanet"
-import "./Style.css"
+// import "./Style.css"
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 

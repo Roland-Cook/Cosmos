@@ -70,6 +70,7 @@ const handleSubmit = async (event) => {
     data.image = image
     data.discovered_by = discovered
     data.system = system
+    data.description = description
 
     const Url = `http://localhost:8100/api/planets_list/`;
     const fetchConfig = {
@@ -90,7 +91,8 @@ const handleSubmit = async (event) => {
       setDistance('')
       setImage('')
       setDiscovered('')
-      setSystem('') 
+      setSystem('')
+      setDescription('')
     }
   }
 
@@ -113,9 +115,9 @@ const fetchData = async () => {
 return (
     <div className="row">
     <div className="offset-3 col-6">
-      <div className="shadow p-4 mt-4">
+      <div className="">
         <h1 style={{color:"white"}}>Create a Planet</h1>
-        <form onSubmit={handleSubmit} id="create-location-form">
+        <form onSubmit={handleSubmit} id="planet-form">
           <div className="form-floating mb-3">
             <input onChange={handleNameChange} value={name} placeholder="Planet Name"  name={name} id="automobileVin" className="form-control"/>
             <label htmlFor="name">Name</label>
@@ -133,11 +135,21 @@ return (
             <label >Distance</label>
           </div>
           <div className="form-floating mb-3">
-            <input onChange={handleDiscoverChange} value={discovered} placeholder="Reason" required name={discovered} id="reason" className="form-control"/>
+            <input onChange={handleDiscoverChange} value={discovered} placeholder="Discovered BY" required name={discovered} id="reason" className="form-control"/>
             <label htmlFor="picture_url">Discovered By </label>
           </div>
+          <div className="form-floating mb-3">
+            <input onChange={handleImageChange} type="url" value={image} placeholder="Image URL" required name={image} id="reason" className="form-control"/>
+            <label htmlFor="picture_url">Image URL </label>
+          </div>
+          <div className="form-floating mb-3">
+            <textarea onChange={handleDescriptionChange}  value={description} placeholder="Description of planet..."  name={description} id="" className="form-control"/>
+            <label >Description </label>
+    
+          </div>
+
           <div className="mb-3">
-            <select onChange={handleSystemChange} name={system} value={system} id="technician" className="form-select">
+            <select onChange={handleSystemChange} name={system} value={system}  id="technician" className="form-select">
             <option >Choose a System</option>
                 {systems.map(system => {
                   return (

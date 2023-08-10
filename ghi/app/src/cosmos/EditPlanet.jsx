@@ -124,12 +124,12 @@ const fetchData = async () => {
 return (
     <div className="row">
     <div className="offset-3 col-6">
-      <div className="shadow p-4 mt-4">
+      <div className="">
         <h1 style={{color:"white"}}>Edit a Planet</h1>
-        <form onSubmit={handleSubmit} id="create-location-form">
+        <form onSubmit={handleSubmit} id="planet-form">
         <div className="mb-3">
             <select onChange={handleNameChange} name={name} value={name} id="technician" className="form-select">
-            <option >Choose a System</option>
+            <option >Choose a Planet</option>
                 {planets.map(planet => {
                   return (
                     <option key={planet.name} value={planet.name}>
@@ -141,7 +141,7 @@ return (
           </div>
           <div className="form-floating mb-3">
             <input onChange={handleMassChange} value={mass} placeholder="customer" name={mass} id="customer" className="form-control"/>
-            <label htmlFor="manufacturer">Mass</label>
+            <label >Mass</label>
           </div>
           <div className="form-floating mb-3">
             <input  onChange={handleTemperatureChange} value={temperature} placeholder="date" name={temperature} id="datetime" className="form-control"/>
@@ -149,11 +149,19 @@ return (
           </div>
           <div className="form-floating mb-3">
             <input  onChange={handleDistanceChange} value={distance} placeholder="date" name={distance} id="time" className="form-control"/>
-            <label >Distance</label>
+            <label>Distance</label>
           </div>
           <div className="form-floating mb-3">
-            <input onChange={handleDiscoverChange} value={discovered} placeholder="Reason" required name={discovered} id="reason" className="form-control"/>
+            <input  onChange={handleDescriptionChange} value={description} placeholder="date" name={description} id="time" className="form-control"/>
+            <label>Description</label>
+          </div>
+          <div className="form-floating mb-3">
+            <textarea onChange={handleDiscoverChange} value={discovered} placeholder="Reason" required name={discovered} id="reason" className="form-control"/>
             <label htmlFor="picture_url">Discovered By </label>
+          </div>
+          <div className="form-floating mb-3">
+            <input onChange={handleImageChange} type="url" value={image} placeholder="Image URL" required name={image} id="reason" className="form-control"/>
+            <label htmlFor="picture_url">Image URL </label>
           </div>
           <div className="mb-3">
             <select onChange={handleSystemChange} name={system} value={system} id="technician" className="form-select">

@@ -1,0 +1,22 @@
+
+.card {
+  background: #ffffff6c;
+  border: 1px solid #cfcfcf;
+  color: rgb(255, 255, 255);
+  margin-bottom: 2rem;
+}
+
+
+.wrap{
+  display: flex !important;
+  flex-wrap: wrap !important;
+}
+
+.f-container {
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin-top: 0rem;
+  margin-bottom: 20px;
+}

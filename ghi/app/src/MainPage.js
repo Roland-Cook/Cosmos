@@ -1,4 +1,4 @@
-import "./index.css"
+// import "./index.css"
 import cosmosImg from "./images/cosmosImg.jpg"
 
 function MainPage() {
