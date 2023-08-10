@@ -4,6 +4,7 @@ import React, {useState, useEffect} from "react";
 function EditPlanet () {
 
 const [name, setName] = useState('');
+const [newName, setNewName] = useState('');
 const [mass, setMass] = useState('');
 const [temperature,setTemperature] = useState('')
 const [distance,setDistance] = useState('')
@@ -19,6 +20,11 @@ const [system,setSystem] = useState('');
 const handleNameChange = (event) => {
     const value = event.target.value;
     setName(value);
+  }
+
+  const handleNewNameChange = (event) => {
+    const value = event.target.value;
+    setNewName(value);
   }
 
   const handleMassChange = (event) => {
@@ -63,11 +69,12 @@ const handleSubmit = async (event) => {
    
     // create an empty JSON object
     const data = {};
-    data.name = name;
+    data.name = newName
     data.mass = mass
     data.temperature = temperature
     data.distance = distance
     data.image = image
+    data.description = description
     data.discovered_by = discovered
     data.system = system
 
@@ -84,8 +91,9 @@ const handleSubmit = async (event) => {
     const response = await fetch(Url, fetchConfig);
     console.log(response)
 
-    if (response.ok) {
-      setName('');
+    if (!response.ok) {
+      setName('')
+      setNewName('');
       setMass('')
       setTemperature('')
       setDiscovered('')
@@ -131,7 +139,7 @@ return (
         <h1 style={{color:"white"}}>Edit a Planet</h1>
         <form onSubmit={handleSubmit} id="planet-form">
         <div className="mb-3">
-            <select onChange={handleNameChange} name={name} value={name} className="form-select">
+            <select onChange={handleNameChange} value={name} name={name} className="form-select">
             <option >Choose a Planet</option>
                 {planets.map(planet => {
                   return (
@@ -142,30 +150,33 @@ return (
                 })}
                 </select>
           </div>
-
           <div className="form-floating mb-3">
-            <input onChange={handleMassChange} value={mass} placeholder="mass"  name={mass} id="customer" className="form-control"/>
-            <label> Mass</label>
+            <input onChange={handleNewNameChange} value={newName} required placeholder="mass"  name={newName} id="customer" className="form-control"/>
+            <label>Name</label>
           </div>
           <div className="form-floating mb-3">
-            <input  onChange={handleTemperatureChange} value={temperature} placeholder="date" name={temperature} id="datetime" className="form-control"/>
+            <input onChange={handleMassChange} value={mass} required placeholder="mass"  name={mass} id="customer" className="form-control"/>
+            <label>Mass</label>
+          </div>
+          <div className="form-floating mb-3">
+            <input  onChange={handleTemperatureChange} value={temperature} required placeholder="date" name={temperature} id="datetime" className="form-control"/>
             <label >Temperature</label>
           </div>
           <div className="form-floating mb-3">
-            <input  onChange={handleDistanceChange} value={distance} placeholder="date" name={distance} id="time" className="form-control"/>
+            <input  onChange={handleDistanceChange} value={distance} required placeholder="date" name={distance} id="time" className="form-control"/>
             <label>Distance</label>
           </div>
           <div className="form-floating mb-3">
-            <input  onChange={handleDescriptionChange} value={description} placeholder="date" name={description} id="time" className="form-control"/>
+            <input  onChange={handleDescriptionChange} value={description} required  placeholder="date" name={description} id="time" className="form-control"/>
             <label>Description</label>
           </div>
           <div className="form-floating mb-3">
-            <textarea onChange={handleDiscoverChange} value={discovered} placeholder="Reason" name={discovered} id="reason" className="form-control"/>
-            <label htmlFor="picture_url">Discovered By </label>
+            <textarea onChange={handleDiscoverChange} value={discovered} required placeholder="Reason" name={discovered} id="reason" className="form-control"/>
+            <label >Discovered By </label>
           </div>
           <div className="form-floating mb-3">
-            <input onChange={handleImageChange} type="url" value={image} placeholder="Image URL" name={image} id="reason" className="form-control"/>
-            <label htmlFor="picture_url">Image URL </label>
+            <input onChange={handleImageChange} type="url"  required value={image} placeholder="Image URL" name={image} id="reason" className="form-control"/>
+            <label>Image URL </label>
           </div>
           <div className="mb-3">
             <select onChange={handleSystemChange} name={system} value={system} id="technician" className="form-select">

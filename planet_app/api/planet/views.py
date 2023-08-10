@@ -2,7 +2,6 @@ from django.shortcuts import render, get_object_or_404
 from django.http import JsonResponse
 import json
 from planet.models import Planet, PlanetSystem
-from planet.forms import PlanetForm, LoginForm, SignUpForm, SystemForm, EditPlanetForm
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_http_methods
 from django.contrib.auth import login, authenticate, logout
@@ -83,11 +82,6 @@ def planet_detail(request, name):
         
 
 
-
-
-
-
-
 @require_http_methods(["GET", "POST"])
 def view_systems(request):
     if request.method == "GET":
@@ -113,21 +107,21 @@ def view_systems(request):
                 ) 
 
 @require_http_methods(["GET", "DELETE","PUT"])
-def system_detail(request, id):
+def system_detail(request, name):
     if request.method == "GET":
-        system = PlanetSystem.objects.get(id=id)
+        system = PlanetSystem.objects.get(name=name)
         return JsonResponse(
             system,
             encoder=SystemEncoder,
             safe=False,
         )
     elif request.method=="DELETE":
-        count, _ = PlanetSystem.objects.filter(id=id).delete()
+        count, _ = PlanetSystem.objects.filter(name=name).delete()
         return JsonResponse({"deleted": count > 0})
     else:
         content = json.loads(request.body)
-        PlanetSystem.objects.filter(id=id).update(**content)
-        system = PlanetSystem.objects.get(id=id)
+        PlanetSystem.objects.filter(name=name).update(**content)
+        system = PlanetSystem.objects.get(name=name)
         return JsonResponse(
         system,
         encoder=SystemEncoder,
@@ -135,140 +129,11 @@ def system_detail(request, id):
         )
         
 
-
-
-# def view_planets(request):
-#     planets = Planet.objects.all()
-#     context = {
-
-#         "planets" : planets
-#     }
-#     return render(request, "planet/planets.html", context)
-
-
-# def planet_detail(request,id):
-#     planet=get_object_or_404(Planet.objects,id=id)
-#     context={
-#         "planet" : planet
-#     }
-#     return render(request, "planet/planet_detail.html", context)
-
-# @login_required
-# def create_planet(request):
-#     if request.method=="POST":
-#         form = PlanetForm(request.POST)
-#         if form.is_valid():
-#             form.save()
-#             return redirect("planets_view")
-#     else:
-#         form = PlanetForm()
-#     context={
-#         "form":form
-#             }
-#     return render(request,"planet/create_planet.html",context)   
-
-
-# def user_login(request):
-#     if request.method == "POST":
-#         form = LoginForm(request.POST)
-#         if form.is_valid():
-#             username = request.POST["username"]
-#             password = request.POST["password"]
-#             user = authenticate(request, username=username, password=password)
-
-#             if user is not None:
-#                 login(request, user)
-#                 return redirect("planets_view")
-#     else:
-#         form = LoginForm()
-#     context = {"form": form}
-#     return render(request, "planet/login.html", context)
-
-
-# def user_logout(request):
-#     logout(request)
-#     return redirect("planets_view")
-
-
-# def user_signup(request):
-#     if request.method == "POST":
-#         form = SignUpForm(request.POST)
-#         if form.is_valid():
-#             username = form.cleaned_data["username"]
-#             password = form.cleaned_data["password"]
-#             password_confirmation = form.cleaned_data["password_confirmation"]
-
-#             if password == password_confirmation:
-#                 user = User.objects.create_user(username, password)
-#                 login(request, user)
-#                 return redirect("planets_view")
-#             else:
-#                 form.add_error("password", "Passwords do not match")
-#     else:
-#         form = SignUpForm()
-#     context = {"form": form}
-#     return render(request, "planet/signup.html", context)
-
-
-# def planet_system(request,id):
-#     system = get_object_or_404(PlanetSystem.objects,id=id)
-#     context = {
-#         "system" : system
-#     }
-#     return render(request, "planet/planet_systems.html", context)
-
-# def all_systems(request):
-#     all_systems = PlanetSystem.objects.all()
-#     context = {
-#         "systems" : all_systems
-#     }
-#     return render(request, "planet/all_systems.html", context)
-
-# @login_required
-# def create_system(request):
-#     if request.method=="POST":
-#         form = SystemForm(request.POST)
-#         if form.is_valid():
-#             form.save()
-#             return redirect("all_systems")
-#     else:
-#         form = SystemForm()
-#     context={
-#         "form":form
-#             }
-#     return render(request,"planet/create_system.html",context)
-
-
-# @login_required
-# def edit_planet(request,id):
-#     post =get_object_or_404(Planet.objects,id=id)
-#     if request.method == "POST":
-#         form = EditPlanetForm(request.POST, instance=post)
-#         if form.is_valid():
-#             form.save()
-#             return redirect("planet_detail",id=id)
-#     else:
-#         form =EditPlanetForm(instance=post)
-
-#     context={
-#         "post_object":post,
-#         "post_form":form,
-#     }
-#     return render(request, "planet/edit_planet.html",context)
-
-# @login_required
-# def edit_system(request,id):
-#     post =get_object_or_404(PlanetSystem.objects,id=id)
-#     if request.method == "POST":
-#         form = SystemForm(request.POST, instance=post)
-#         if form.is_valid():
-#             form.save()
-#             return redirect("systems",id=id)
-#     else:
-#         form =SystemForm(instance=post)
-
-#     context={
-#         "post_object":post,
-#         "post_form":form,
-#     }
-#     return render(request, "planet/edit_system.html",context)
+## filter planets by system names
+def show_system_planets(request,name):
+    system_planet_list = Planet.objects.get(system__name=name)
+    return JsonResponse(
+        {"system_planets":system_planet_list},
+        encoder=PlanetEncoder,
+        safe=False,
+    )

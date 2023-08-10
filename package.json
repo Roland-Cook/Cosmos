@@ -5,7 +5,9 @@
   "dependencies": {
     "@headlessui/react": "^1.7.16",
     "@heroicons/react": "^2.0.18",
+    "dat.gui": "^0.7.9",
     "node-sass": "^9.0.0",
-    "sass": "^1.65.1"
+    "sass": "^1.65.1",
+    "three": "^0.155.0"
   }
 }
