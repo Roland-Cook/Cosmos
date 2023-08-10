@@ -61,7 +61,7 @@ def view_planets(request):
 @require_http_methods(["GET", "DELETE","PUT"])
 def planet_detail(request, name):
     if request.method == "GET":
-        planet = Planet.objects.get(id=id)
+        planet = Planet.objects.get(name=name)
         return JsonResponse(
             planet,
             encoder=PlanetEncoder,

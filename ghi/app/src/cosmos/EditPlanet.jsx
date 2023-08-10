@@ -13,6 +13,7 @@ const [discovered,setDiscovered] = useState('');
 const [systems,setSystems] = useState([]);
 const [planets,setPlanets] = useState([]);
 const [system,setSystem] = useState('');
+const [currentPlanet,SetCurrentPlanet] = useState('')
 
 
 
@@ -58,6 +59,7 @@ const handleNameChange = (event) => {
     setDiscovered(value);
   }
 
+  
 
 const handleSubmit = async (event) => {
     event.preventDefault();
@@ -92,7 +94,7 @@ const handleSubmit = async (event) => {
       setDiscovered('')
       setDistance('')
       setImage('')
-      setDiscovered('')
+      setDescription('')
       setSystem('') 
     }
   }
@@ -116,9 +118,25 @@ const fetchData = async () => {
     }
   }
 
+  const fetchPlanet = async (planetName) => {
+    const url = `http://localhost:8100/api/planet_detail/${planetName}`;
+
+    const response = await fetch(url);
+
+
+    if (response.ok) {
+      const data = await response.json();
+    }
+  }
+
+
   useEffect(() => {
     fetchData();
   }, []);
+
+  let planet = planets.map(planet => {
+    return planet
+  })
 
 
 return (
@@ -128,7 +146,7 @@ return (
         <h1 style={{color:"white"}}>Edit a Planet</h1>
         <form onSubmit={handleSubmit} id="planet-form">
         <div className="mb-3">
-            <select onChange={handleNameChange} name={name} value={name} id="technician" className="form-select">
+            <select onChange={handleNameChange} name={name} value={name} className="form-select">
             <option >Choose a Planet</option>
                 {planets.map(planet => {
                   return (
@@ -139,9 +157,10 @@ return (
                 })}
                 </select>
           </div>
+
           <div className="form-floating mb-3">
-            <input onChange={handleMassChange} value={mass} placeholder="customer" name={mass} id="customer" className="form-control"/>
-            <label >Mass</label>
+            <input onChange={handleMassChange} value={mass} placeholder="mass"  name={mass} id="customer" className="form-control"/>
+            <label> Mass</label>
           </div>
           <div className="form-floating mb-3">
             <input  onChange={handleTemperatureChange} value={temperature} placeholder="date" name={temperature} id="datetime" className="form-control"/>
@@ -156,11 +175,11 @@ return (
             <label>Description</label>
           </div>
           <div className="form-floating mb-3">
-            <textarea onChange={handleDiscoverChange} value={discovered} placeholder="Reason" required name={discovered} id="reason" className="form-control"/>
+            <textarea onChange={handleDiscoverChange} value={discovered} placeholder="Reason" name={discovered} id="reason" className="form-control"/>
             <label htmlFor="picture_url">Discovered By </label>
           </div>
           <div className="form-floating mb-3">
-            <input onChange={handleImageChange} type="url" value={image} placeholder="Image URL" required name={image} id="reason" className="form-control"/>
+            <input onChange={handleImageChange} type="url" value={image} placeholder="Image URL" name={image} id="reason" className="form-control"/>
             <label htmlFor="picture_url">Image URL </label>
           </div>
           <div className="mb-3">

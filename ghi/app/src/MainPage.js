@@ -1,5 +1,4 @@
 import "./index.css"
-import cosmosImg from "./images/cosmosImg.jpg"
 
 
 function MainPage() {
@@ -8,11 +7,8 @@ function MainPage() {
     <>
     
     <div className="px-4 py-5 my-5 text-center">
-    <div className="col-lg-6 mx-auto">
-
-
-        
-        <p className="lead mb-20 bold">
+    <div className="col-lg-9 mx-auto">
+        <p className="lead mb-20 bold font">
           Explore the cosmos
         </p>
       </div>
