@@ -131,7 +131,7 @@ def system_detail(request, name):
 
 ## filter planets by system names
 def show_system_planets(request,name):
-    system_planet_list = Planet.objects.get(system__name=name)
+    system_planet_list = Planet.objects.filter(system__name=name)
     return JsonResponse(
         {"system_planets":system_planet_list},
         encoder=PlanetEncoder,

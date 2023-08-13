@@ -4,6 +4,7 @@ import "./card.scss"
 import React, { Component } from "react";
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import { Link } from "react-router-dom";
 
 function SystemList() {
 
@@ -23,7 +24,7 @@ function SystemList() {
   
       useEffect(() => {
           loadPlanets();
-      }, [systems]);
+      }, []);
   
   
       const handleDelete = async (systemName) => {
@@ -44,9 +45,11 @@ function SystemList() {
             <div className="f-container">
               {systems.map(system  => {
                 return (
+
                   <Card style={{ width: '18rem' }}>
-                  <Card.Img variant="top" src={system.image} style={{ height: 200 }}  />
+                  <Card.Img variant="top" src={system.image} style={{ height: 200 }}   /> 
                   <Card.Body>
+                    
                     <Card.Title>{system.name}</Card.Title>
                     <Card.Text>
                       {system.description}
@@ -55,7 +58,6 @@ function SystemList() {
                   </Card.Body>
                 </Card>
                   );
-                
       })}
       </div>
             </>

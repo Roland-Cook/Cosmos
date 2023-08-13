@@ -136,7 +136,7 @@ return (
     <div className="row">
     <div className="offset-3 col-6">
       <div className="">
-        <h1 style={{color:"white"}}>Edit a Planet</h1>
+        <h1 style={{color:"white"}}>Edit an Existing Planet</h1>
         <form onSubmit={handleSubmit} id="planet-form">
         <div className="mb-3">
             <select onChange={handleNameChange} value={name} name={name} className="form-select">
@@ -151,7 +151,7 @@ return (
                 </select>
           </div>
           <div className="form-floating mb-3">
-            <input onChange={handleNewNameChange} value={newName} required placeholder="mass"  name={newName} id="customer" className="form-control"/>
+            <input onChange={handleNewNameChange} value={newName} required placeholder="newName"  name={newName} id="customer" className="form-control"/>
             <label>Name</label>
           </div>
           <div className="form-floating mb-3">

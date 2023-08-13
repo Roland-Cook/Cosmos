@@ -5,20 +5,19 @@ import React, { Component } from "react";
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
-function PlanetList() {
+function SystemsPlanets() {
 
     const [planets,setPlanets] = useState([])
 
 
-
     async function loadPlanets() {
-        const response = await fetch('http://localhost:8100/api/planets_list/');
+
+        const response = await fetch("http://localhost:8100/api/system_planets/Orion Nebula/");
         console.log(response)
 
         if (response.ok) {
           const data = await response.json();
-          setPlanets(data.planets)
-          console.log(data)
+          setPlanets(data.system_planets)
     }
   }
 
@@ -68,4 +67,4 @@ function PlanetList() {
     )
     }
     
-    export default PlanetList
+    export default SystemsPlanets

@@ -4,15 +4,10 @@ import React, {useState, useEffect} from "react";
 function EditSystem () {
 
 const [name, setName] = useState('');
-const [mass, setMass] = useState('');
-const [temperature,setTemperature] = useState('')
-const [distance,setDistance] = useState('')
+const [newName, setNewName] = useState('');
 const [description,setDescription] = useState('')
 const [image, setImage] = useState('');
-const [discovered,setDiscovered] = useState('');
 const [systems,setSystems] = useState([]);
-const [planets,setPlanets] = useState([]);
-const [system,setSystem] = useState('');
 
 
 
@@ -21,18 +16,9 @@ const handleNameChange = (event) => {
     setName(value);
   }
 
-  const handleMassChange = (event) => {
+  const handleNewNameChange = (event) => {
     const value = event.target.value;
-    setMass(value);
-  }
-
-  const handleTemperatureChange = (event) => {
-    const value = event.target.value;
-    setTemperature(value);
-  }
-  const handleDistanceChange = (event) => {
-    const value = event.target.value;
-    setDistance(value);
+    setNewName(value);
   }
 
   const handleDescriptionChange = (event) => {
@@ -52,7 +38,7 @@ const handleSubmit = async (event) => {
    
     // create an empty JSON object
     const data = {};
-    data.name = name;
+    data.name = newName;
     data.description = description
     data.image = image
 
@@ -70,30 +56,25 @@ const handleSubmit = async (event) => {
     const response = await fetch(Url, fetchConfig);
     console.log(response)
 
-    if (response.ok) {
-      setName('');
+    if (!response.ok) {
+      setName('')
+      setNewName('');
       setImage('')
       setDescription('')
-
     }
   }
 
 
 const fetchData = async () => {
     const url = 'http://localhost:8100/api/systems_list/';
-    const url2 = 'http://localhost:8100/api/planets_list/';
 
     const response = await fetch(url);
-    const response2 = await fetch(url2);
 
-
+    console.log(response)
     if (response.ok) {
       const data = await response.json();
-      const data2 = await response2.json();
-
 
       setSystems(data.systems)
-      setPlanets(data2.planets)
     }
   }
 
@@ -125,6 +106,10 @@ return (
                 </select>
           </div>
 
+          <div className="form-floating mb-3">
+            <input  onChange={handleNewNameChange} value={newName} placeholder="newName" name={newName} id="time" className="form-control"/>
+            <label>Name</label>
+          </div>
           <div className="form-floating mb-3">
             <input  onChange={handleDescriptionChange} value={description} placeholder="date" name={description} id="time" className="form-control"/>
             <label>Description</label>

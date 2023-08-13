@@ -10,14 +10,16 @@ import CreateSystem from "./cosmos/CreateSystem";
 import EditSystem from "./cosmos/EditSystem";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { MouseTrail } from "@stichiboi/react-elegant-mouse-trail";
+import SystemsPlanets from "./cosmos/SystemsPlanetsList";
+import PlanetSearch from "./cosmos/SearchPlanets";
 
-// converted TS to JS
+
 
 function App() {
-  
+  // converted TS to JS for mouse trail
+
   return (
     <>
-    
   <MouseTrail strokeColor={"white"}></MouseTrail>
   <div class="stars">
   <div class="star"></div>
@@ -72,9 +74,8 @@ function App() {
   <div class="star"></div>
 </div>
 
-
     <div className="App">
-    <div className="container"> 
+    <div className="container "> 
     <h1 id="main-title">Cosmos</h1>
     <BrowserRouter>
     <NavBar className="main-navbar"/>
@@ -86,11 +87,12 @@ function App() {
       <Route path="/planetList" element={<PlanetList/>}/>
       <Route path="/systemList" element={<SystemList/>}/>
       <Route path="/editPlanet" element={<EditPlanet/>}/>
+      <Route path="/systemsPlanets/<:name>" element={<SystemsPlanets/>}/>
+      <Route path="/planetSearch" element={<PlanetSearch/>}/>
       </Routes>
     </BrowserRouter>
     </div>
     </div>
-
     </>
   );
 }

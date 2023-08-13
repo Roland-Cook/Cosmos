@@ -64,7 +64,7 @@ function NavBar() {
 
             <div class="menu-item">
                 <div class="menu-text">
-                    <a href="#">Search planets</a>
+                <div class="title">  <NavLink className="nav-link" to="/planetSearch">Search Planets <i class="far fa-arrow-right"></i> </NavLink></div>
                 </div>
             </div>
 
