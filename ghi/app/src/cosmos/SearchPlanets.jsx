@@ -2,16 +2,23 @@ import { useEffect, useState } from "react";
 import { Search } from 'react-bootstrap-icons';
 import "./card.scss"
 import React, { Component } from "react";
+import Card from 'react-bootstrap/Card';
 
 
 
-function PlanetSearch() {
 
 
+function PlanetSearch(e) {
+
+  
     const [planetName,setPlanetName] = useState('')
+    const [planet,setPlanet] = useState('')
+
     const [planets,setPlanets] = useState([])
 
 
+
+    
 
     const handlePlanetNameChange = (event) => {
         const value = event.target.value;
@@ -23,43 +30,44 @@ function PlanetSearch() {
   const handleSubmit = async (event) => {
     // event.preventDefault();
 
-    const settings = {
-        method: 'GET',
-        headers: { 'X-Api-Key': 'LUzifa1Hcd3nt987OZgdkA==8nL9HBP8W1PZUT84'}
-    };
-
-    console.log("clicked", settings)
 
 
-    // const Url = fetch(`https://api.api-ninjas.com/v1/planets?name=earth`, settings);
+    console.log(planetName)
+    const response = await fetch(`http://localhost:8100/api/planet_detail/${planetName}/`);
+    if (response.ok) {
+      const data = await response.json();
+      console.log(data)
+      setPlanet(data)
+}
+  
+    
+}
+useEffect(() => {
+  handleSubmit();
+}, []);
 
-    // const response = await fetch(Url);
-    // console.log(response)
-
-    // const asyncGetCall = async () => {
-    //     try {
-    //         const response = await fetch(`https://api.api-ninjas.com/v1/planets?name=earth`, settings);
-    //          const data = await response.json();
-    //         // enter you logic when the fetch is successful
-    //          console.log(data);
-    //        } catch(error) {
-    //     // enter your logic for when there is an error (ex. error toast)
-    //           console.log(error)
-    //          } 
-    //     }
-
-
-    //   asyncGetCall()
-
-     }
-       
 
       return (
-        <>
+        <> 
     <div class="search-box">
-        <button onClick={handleSubmit} onChange={handlePlanetNameChange} value={planetName} name={planetName} class="btn-search"><Search/></button>
-        <input type="text" class="input-search" placeholder="Type to Search..."/>
+        <button onClick={handleSubmit}  value={planetName} name={planetName} class="btn-search"><Search/></button>
+        <input type="text" onChange={handlePlanetNameChange} class="input-search" placeholder="Type to Search..."/>
     </div>
+
+        <Card style={{ width: '18rem' }}>
+                <Card.Img variant="top" src={planet.image} style={{ height: 200 }}  />
+                <Card.Body>
+                  <Card.Title>{planet.name}</Card.Title>
+                  <Card.Text>
+                    {planet.description}
+                  </Card.Text>
+                  <Card.Text>Mass: {planet.mass}</Card.Text>
+                   <Card.Text>Temperature: {planet.temperature}</Card.Text>
+                    <Card.Text>Discovered By: {planet.discovered_by}</Card.Text>
+                    <Card.Text>Light Years Away: {planet.discovered_by}</Card.Text>
+                </Card.Body>
+              </Card>
+
             </>
       )
       }

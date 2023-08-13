@@ -64,14 +64,28 @@ function NavBar() {
 
             <div class="menu-item">
                 <div class="menu-text">
-                <div class="title">  <NavLink className="nav-link" to="/planetSearch">Search Planets <i class="far fa-arrow-right"></i> </NavLink></div>
+                    <a href="#">Search Planets</a>
+                </div>
+                <div class="sub-menu">
+                    <div class="icon-box">
+                        <div class="icon"><i class="fal fa-wind-turbine"></i></div>
+                        <div class="text">
+                            <div class="title">  <NavLink className="nav-link" to="/planetSearch">Your Planets <i class="far fa-arrow-right"></i> </NavLink></div>
+                        </div>
+                    </div>
+                    <div class="icon-box">
+                        <div class="icon"><i class="fal fa-lightbulb-on"></i></div>
+                        <div class="text">
+                        <div class="title">  <NavLink className="nav-link" to="/ninjaSearch">Ninja Planet Search <i class="far fa-arrow-right"></i> </NavLink></div>
+                        </div>
+                    </div>
+                    <div class="sub-menu-holder"></div>
                 </div>
             </div>
-
+        
             <div id="sub-menu-container">
                 <div id="sub-menu-holder">
                     <div id="sub-menu-bottom">
-
                     </div>
                 </div>
             </div>
@@ -80,8 +94,8 @@ function NavBar() {
 
         <div id="info-box">
             <ul>
-                <li><a target="_top" href="https://twitter.com/thisisfjolt">Follow on Twitter</a></li>
-                <li><a target="_top" href="https://fjolt.com/article/css-only-stripe-menu-with-clip">Read Article</a></li>
+                <li><a target="_top" href="https://twitter.com/thisisfjolt"> Astronomy Picture of the Day </a></li>
+                <li><a target="_top" href="https://fjolt.com/article/css-only-stripe-menu-with-clip">Astronomy Fun Fact</a></li>
                 <li><a target="_top" href="https://github.com/smpnjn/stripe-like-menu">GitHub Repo</a></li>
             </ul>
         </div>

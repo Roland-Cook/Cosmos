@@ -12,9 +12,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { MouseTrail } from "@stichiboi/react-elegant-mouse-trail";
 import SystemsPlanets from "./cosmos/SystemsPlanetsList";
 import PlanetSearch from "./cosmos/SearchPlanets";
-
-
-
+import NinjaSearch from "./cosmos/SearchNinja";
+import { NavLink } from "react-router-dom";
 function App() {
   // converted TS to JS for mouse trail
 
@@ -76,7 +75,10 @@ function App() {
 
     <div className="App">
     <div className="container "> 
-    <h1 id="main-title">Cosmos</h1>
+    <BrowserRouter>
+    <NavLink className="nav-link" to="/"> <h1 id="main-title">Cosmos</h1></NavLink>
+    </BrowserRouter>
+
     <BrowserRouter>
     <NavBar className="main-navbar"/>
     <Routes>
@@ -89,6 +91,7 @@ function App() {
       <Route path="/editPlanet" element={<EditPlanet/>}/>
       <Route path="/systemsPlanets/<:name>" element={<SystemsPlanets/>}/>
       <Route path="/planetSearch" element={<PlanetSearch/>}/>
+      <Route path="/ninjaSearch" element={<NinjaSearch/>}/>
       </Routes>
     </BrowserRouter>
     </div>
