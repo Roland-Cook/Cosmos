@@ -74,7 +74,7 @@ function NinjaSearch(e) {
       	<div class="product-details">
 		
 	 
-	<h1>{planet.name}</h1>
+	<h1> Planet Name: {planet.name}</h1>
   <hr style={{width:300}}></hr>
 	
 		<p class="information">Light years away: {Math.trunc(planet.distance_light_year)}</p>

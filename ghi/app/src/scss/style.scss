@@ -167,8 +167,28 @@
   }
   
   
-  
+.potd{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 100px;
+  margin: 115px;
+  height: 400px;
+  color: white;
+  line-height: 2em;
+}
+.potd img{
+  margin-bottom: 25px;
+  height: 500px;
+  width: 400px;
+  border-radius: 10%;
+}
 
+#planet-form{
+  max-height: 720px;
+}
 
-
-  
+.form-planet{
+  margin-top: -50px;
+}

@@ -115,8 +115,7 @@ return (
     <div className="row">
     <div className="offset-3 col-6">
       
-      <div className="">
-        
+    <div className="form-planet">        
         <h1 style={{color:"white"}}>Create a Planet</h1>
         <form onSubmit={handleSubmit} id="planet-form">
           <div className="form-floating mb-3">

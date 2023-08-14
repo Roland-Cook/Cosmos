@@ -14,6 +14,8 @@ import SystemsPlanets from "./cosmos/SystemsPlanetsList";
 import PlanetSearch from "./cosmos/SearchPlanets";
 import NinjaSearch from "./cosmos/SearchNinja";
 import { NavLink } from "react-router-dom";
+import Picture from "./cosmos/NasaPOTD";
+
 function App() {
   // converted TS to JS for mouse trail
 
@@ -92,6 +94,7 @@ function App() {
       <Route path="/systemsPlanets/<:name>" element={<SystemsPlanets/>}/>
       <Route path="/planetSearch" element={<PlanetSearch/>}/>
       <Route path="/ninjaSearch" element={<NinjaSearch/>}/>
+      <Route path="/dailyPicture" element={<Picture/>}/>
       </Routes>
     </BrowserRouter>
     </div>

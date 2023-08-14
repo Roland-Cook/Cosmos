@@ -62,12 +62,11 @@ useEffect(() => {
     </div>
       <div className="display-planet-info">
       <div class="product-details">
-      <h1>{planet.name}</h1>
+      <h1> Planet Name: {planet.name}</h1>
       <hr style={{width:300}}></hr>
     
         <p class="information">Light years away: {Math.trunc(planet.distance)}</p>
         <p class="information">Planet Mass: {planet.mass}</p>
-        <p class="information">Planet Temperature: {planet.temperature}</p>
         <p class="information">Planet Temperature: {planet.temperature}</p>
         <p class="information">Discovered By: {planet.discovered_by}</p>
     </div>

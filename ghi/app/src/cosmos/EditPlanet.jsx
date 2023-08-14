@@ -135,7 +135,7 @@ const fetchData = async () => {
 return (
     <div className="row">
     <div className="offset-3 col-6">
-      <div className="">
+      <div className="form-planet">
         <h1 style={{color:"white"}}>Edit an Existing Planet</h1>
         <form onSubmit={handleSubmit} id="planet-form">
         <div className="mb-3">
