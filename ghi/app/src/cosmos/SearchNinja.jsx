@@ -1,12 +1,8 @@
 import { useEffect, useState } from "react";
 import { Search } from 'react-bootstrap-icons';
-import "./card.scss"
 import React, { Component } from "react";
-import Card from 'react-bootstrap/Card';
-
+import "./searchcard.scss"
 import six from "./planetImages/6.jpg"
-
-
 
 
 function NinjaSearch(e) {
@@ -73,17 +69,28 @@ function NinjaSearch(e) {
 {planets.map(planet  => {
   if (planets.length ===1){
     return (
-      <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src={six} style={{ height: 200 }}  />
-      <Card.Body>
-        <Card.Title>{planet.name}</Card.Title>
-        <Card.Text>
-          Light years away from us: {planet.distance_light_year}
-        </Card.Text>
-        <Card.Text>Mass: {planet.mass}</Card.Text>
-        <Card.Text>Temperature: {planet.temperature}</Card.Text>
-      </Card.Body>
-    </Card>
+      <>
+      <div className="display-planet-info">
+      	<div class="product-details">
+		
+	 
+	<h1>{planet.name}</h1>
+  <hr style={{width:300}}></hr>
+	
+		<p class="information">Light years away: {Math.trunc(planet.distance_light_year)}</p>
+    <p class="information">Planet Mass: {planet.mass}</p>
+    <p class="information">Planet Temperature: {planet.temperature}</p>
+    <p class="information">Days in year: {Math.trunc(planet.period)}</p>
+</div>
+<div class="product-image">
+	<img src={six} alt="Omar Dsoky"/>
+	
+<div class="info">
+	<h2></h2>
+</div>
+</div>
+</div>
+      </>
       );
   }
   else{

@@ -3,8 +3,7 @@ import { Search } from 'react-bootstrap-icons';
 import "./card.scss"
 import React, { Component } from "react";
 import Card from 'react-bootstrap/Card';
-
-
+import "./searchcard.scss"
 
 
 
@@ -45,31 +44,44 @@ function PlanetSearch(e) {
 useEffect(() => {
   handleSubmit();
 }, []);
-
-
+  if (planet.length ===0)
       return (
         <> 
     <div class="search-box">
         <button onClick={handleSubmit}  value={planetName} name={planetName} class="btn-search"><Search/></button>
         <input type="text" onChange={handlePlanetNameChange} class="input-search" placeholder="Type to Search..."/>
     </div>
-
-        <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src={planet.image} style={{ height: 200 }}  />
-                <Card.Body>
-                  <Card.Title>{planet.name}</Card.Title>
-                  <Card.Text>
-                    {planet.description}
-                  </Card.Text>
-                  <Card.Text>Mass: {planet.mass}</Card.Text>
-                   <Card.Text>Temperature: {planet.temperature}</Card.Text>
-                    <Card.Text>Discovered By: {planet.discovered_by}</Card.Text>
-                    <Card.Text>Light Years Away: {planet.discovered_by}</Card.Text>
-                </Card.Body>
-              </Card>
-
-            </>
-      )
+    </>
+    )
+      else{
+    return(
+      <>
+          <div class="search-box">
+        <button onClick={handleSubmit}  value={planetName} name={planetName} class="btn-search"><Search/></button>
+        <input type="text" onChange={handlePlanetNameChange} class="input-search" placeholder="Type to Search..."/>
+    </div>
+      <div className="display-planet-info">
+      <div class="product-details">
+      <h1>{planet.name}</h1>
+      <hr style={{width:300}}></hr>
+    
+        <p class="information">Light years away: {Math.trunc(planet.distance)}</p>
+        <p class="information">Planet Mass: {planet.mass}</p>
+        <p class="information">Planet Temperature: {planet.temperature}</p>
+        <p class="information">Planet Temperature: {planet.temperature}</p>
+        <p class="information">Discovered By: {planet.discovered_by}</p>
+    </div>
+    <div class="product-image">
+      <img src={planet.image} alt=""/>
+      
+    <div class="info">
+      <h2>{planet.description}</h2>
+    </div>
+    </div>
+    </div>
+    </>
+      )}
       }
+    
       
     export default PlanetSearch
