@@ -67,4 +67,4 @@ I've built several features encourage the original image I had in mind when crea
 HTML, CSS, JS, Python, React, Django, SASS, Bootstrap
 
 ## Project status
-Still being worked on, I plan to add a couple more features pertaining to API calls and working with outside data. I am looking into making this application mobile responsive via media quieries. 
+Still being worked on, I plan to add a couple more features pertaining to API calls and working with outside data. I am also looking into making this application mobile responsive via media quieries. 
