@@ -38,7 +38,7 @@ const handleSubmit = async (event) => {
    
     // create an empty JSON object
     const data = {};
-    data.name = newName;
+    data.name = newName.toLowerCase();
     data.description = description
     data.image = image
 
@@ -56,7 +56,7 @@ const handleSubmit = async (event) => {
     const response = await fetch(Url, fetchConfig);
     console.log(response)
 
-    if (!response.ok) {
+    if (response.ok) {
       setName('')
       setNewName('');
       setImage('')

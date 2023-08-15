@@ -91,7 +91,7 @@ const handleSubmit = async (event) => {
     const response = await fetch(Url, fetchConfig);
     console.log(response)
 
-    if (!response.ok) {
+    if (response.ok) {
       setName('')
       setNewName('');
       setMass('')

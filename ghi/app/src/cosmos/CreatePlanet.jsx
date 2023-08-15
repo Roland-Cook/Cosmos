@@ -61,7 +61,7 @@ const handleSubmit = async (event) => {
    
     // create an empty JSON object
     const data = {};
-    data.name = name;
+    data.name = name.toLowerCase();
     data.mass = mass
     data.temperature = temperature
     data.distance = distance
