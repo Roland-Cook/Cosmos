@@ -30,33 +30,33 @@ I've built several features encourage the original image I had in mind when crea
 
 <h3> Users can define planets by filling out the form, users must first define a planetary system to properly complete this form. </h3>
 
-![grab-landing-page](./planets/gifs/CreatePlanet.gif)
+![grab-landing-page](./gifs/CreatePlanet.gif)
 
 <h3> Once a planet is defined users can then view a list of all planets defined. </h3>
 
-![](./gifs/AllPlanets.gif/)
+![grab-landing-page](./gifs/AllPlanets.gif/)
 
 
 
 <h3> Users can also define planetary systems within this application, these systems are tied to planets using foreign keys. </h3>
 
-![grab-landing-page](\planets\gifs\CreateSystem.gif)
+![grab-landing-page](./gifs/createSystem.gif)
 
 
 <h3> Under search planets users have the ability to search through any planets they defined within the application to that planets particular information. </h3>
 
-![me](\planets\gifs\YourSearch.gif)
+![grab-landing-page](./gifs/YourSearch.gif)
 
 
 ## Third Party APIs
 
 <h3> Using Ninjas Planet API users can search through thousands of planets and pull information from them. </h3>
 
-![grab-landing-page](\planets\gifs\SearchNinja.gif)
+![grab-landing-page](./gifs/SearchNinja.gif)
 
 <h3> On the bottom right users can access Nasa's Astronomy Picture of The Day. </h3>
 
-![grab-landing-page](\planets\gifs\POTD.gif)
+![grab-landing-page](./gifs/POTD.gif)
 
 
 
