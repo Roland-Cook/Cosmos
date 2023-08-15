@@ -47,7 +47,7 @@ I've built several features encourage the original image I had in mind when crea
 
 ![me](\planets\gifs\YourSearch.gif)
 
-<img src='/planets/gifs/YourSearch.gif'>
+<img src='/planets/gifs/YourSearch.gif' width"200px">
 
 ## Third Party APIs
 
