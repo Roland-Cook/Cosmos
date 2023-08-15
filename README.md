@@ -34,7 +34,7 @@ I've built several features encourage the original image I had in mind when crea
 
 <h3> Once a planet is defined users can then view a list of all planets defined. </h3>
 
-![](.\planets\gifs\AllPlanets.gif)
+![](./gifs/AllPlanets.gif/)
 
 
 
