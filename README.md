@@ -30,7 +30,7 @@ I've built several features encourage the original image I had in mind when crea
 
 <h3> Users can define planets by filling out the form, users must first define a planetary system to properly complete this form. </h3>
 
-![til](\planets\gifs\CreatePlanet.gif)
+![grab-landing-page](/planets/gifs/CreatePlanet.gif)
 
 <h3> Once a planet is defined users can then view a list of all planets defined. </h3>
 
