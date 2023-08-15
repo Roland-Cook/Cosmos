@@ -34,7 +34,7 @@ I've built several features encourage the original image I had in mind when crea
 
 <h3> Once a planet is defined users can then view a list of all planets defined. </h3>
 
-![grab-landing-page](.\planets\gifs\AllPlanets.gif)
+![](.\planets\gifs\AllPlanets.gif)
 
 
 
@@ -46,9 +46,7 @@ I've built several features encourage the original image I had in mind when crea
 <h3> Under search planets users have the ability to search through any planets they defined within the application to that planets particular information. </h3>
 
 ![me](\planets\gifs\YourSearch.gif)
-![me](gifs\CreateSystem.gif)
 
-<img src='/planets/gifs/YourSearch.gif' width="200px">
 
 ## Third Party APIs
 
