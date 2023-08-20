@@ -2,16 +2,26 @@ import { useEffect, useState } from "react";
 import { Search } from 'react-bootstrap-icons';
 import React, { Component } from "react";
 import "./searchcard.scss"
+import one from "./planetImages/1.jpg"
+import two from "./planetImages/2.jpg"
+import three from "./planetImages/3.jpg"
+import four from "./planetImages/4.png"
+import five from "./planetImages/5.jpg"
 import six from "./planetImages/6.jpg"
+import seven from "./planetImages/7.jpg"
+
+
+const planetImages = [
+one,two,three,four,five,six,seven
+]
 
 
 function NinjaSearch(e) {
+  const randomNumber = Math.floor(Math.random() * planetImages.length)
 
-  
-    const [planetName,setPlanetName] = useState('')
+  const [planetName,setPlanetName] = useState('')
     const [planets,setPlanets] = useState([])
-
-
+    const [random,setRandom] = useState(0)
 
     
 
@@ -23,6 +33,8 @@ function NinjaSearch(e) {
 
 
   const handleSubmit = async (event) => {
+    setRandom(randomNumber)
+
     // event.preventDefault();
 
     const settings = {
@@ -30,9 +42,6 @@ function NinjaSearch(e) {
         headers: { 'X-Api-Key': 'LUzifa1Hcd3nt987OZgdkA==8nL9HBP8W1PZUT84'},
         
     };
-
-    console.log(planetName)
-
 
     const asyncGetCall = async () => {
         try {
@@ -65,7 +74,6 @@ function NinjaSearch(e) {
 
 
 
-
 {planets.map(planet  => {
   if (planets.length ===1){
     return (
@@ -79,14 +87,13 @@ function NinjaSearch(e) {
 	
 		<p class="information">Light years away: {Math.trunc(planet.distance_light_year)}</p>
     <p class="information">Planet Mass: {planet.mass}</p>
-    <p class="information">Planet Temperature: {planet.temperature}</p>
+    <p class="information">Planet Temperature: {Math.floor(((planet.temperature - 273.15) * 9/5 + 32))}°f</p>
     <p class="information">Days in year: {Math.trunc(planet.period)}</p>
 </div>
 <div class="product-image">
-	<img src={six} alt="Omar Dsoky"/>
+	<img src={planetImages[random]} alt="Omar Dsoky"/>
 	
 <div class="info">
-	<h2></h2>
 </div>
 </div>
 </div>

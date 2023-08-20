@@ -7,7 +7,7 @@ import "./searchcard.scss"
 
 
 
-function PlanetSearch(e) {
+function PlanetSearch() {
 
   
     const [planetName,setPlanetName] = useState('')
