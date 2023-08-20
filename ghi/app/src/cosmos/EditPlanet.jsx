@@ -117,7 +117,6 @@ const fetchData = async () => {
       const data = await response.json();
       const data2 = await response2.json();
 
-
       setSystems(data.systems)
       setPlanets(data2.planets)
     }
@@ -128,8 +127,6 @@ const fetchData = async () => {
   useEffect(() => {
     fetchData();
   }, []);
-
-
 
 
 return (
@@ -151,35 +148,35 @@ return (
                 </select>
           </div>
           <div className="form-floating mb-3">
-            <input onChange={handleNewNameChange} value={newName} required placeholder="newName"  name={newName} id="customer" className="form-control"/>
+            <input onChange={handleNewNameChange} value={newName} required placeholder="newName"  name={newName}  className="form-control"/>
             <label>Name</label>
           </div>
           <div className="form-floating mb-3">
-            <input onChange={handleMassChange} value={mass} required placeholder="mass"  name={mass} id="customer" className="form-control"/>
+            <input onChange={handleMassChange} value={mass} required placeholder="mass"  name={mass} className="form-control"/>
             <label>Mass</label>
           </div>
           <div className="form-floating mb-3">
-            <input  onChange={handleTemperatureChange} value={temperature} required placeholder="date" name={temperature} id="datetime" className="form-control"/>
+            <input  onChange={handleTemperatureChange} value={temperature} required placeholder="date" name={temperature}  className="form-control"/>
             <label >Temperature</label>
           </div>
           <div className="form-floating mb-3">
-            <input  onChange={handleDistanceChange} value={distance} required placeholder="date" name={distance} id="time" className="form-control"/>
+            <input  onChange={handleDistanceChange} value={distance} required placeholder="date" name={distance} className="form-control"/>
             <label>Distance</label>
           </div>
           <div className="form-floating mb-3">
-            <input  onChange={handleDescriptionChange} value={description} required  placeholder="date" name={description} id="time" className="form-control"/>
+            <input  onChange={handleDescriptionChange} value={description} required  placeholder="date" name={description}  className="form-control"/>
             <label>Description</label>
           </div>
           <div className="form-floating mb-3">
-            <textarea onChange={handleDiscoverChange} value={discovered} required placeholder="Reason" name={discovered} id="reason" className="form-control"/>
+            <textarea onChange={handleDiscoverChange} value={discovered} required placeholder="Reason" name={discovered} className="form-control"/>
             <label >Discovered By </label>
           </div>
           <div className="form-floating mb-3">
-            <input onChange={handleImageChange} type="url"  required value={image} placeholder="Image URL" name={image} id="reason" className="form-control"/>
+            <input onChange={handleImageChange} type="url"  required value={image} placeholder="Image URL" name={image} className="form-control"/>
             <label>Image URL </label>
           </div>
           <div className="mb-3">
-            <select onChange={handleSystemChange} name={system} value={system} id="technician" className="form-select">
+            <select onChange={handleSystemChange} name={system} value={system} className="form-select">
             <option >Choose a System</option>
                 {systems.map(system => {
                   return (

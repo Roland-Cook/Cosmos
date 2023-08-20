@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
 
 import "./card.scss"
-import React, { Component } from "react";
+import React from "react";
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import { Link } from "react-router-dom";
 
 function SystemList() {
 
@@ -17,10 +16,8 @@ function SystemList() {
           if (response.ok) {
             const data = await response.json();
             setSystems(data.systems)
-            console.log(data)
       }
     }
-  
   
       useEffect(() => {
           loadPlanets();
@@ -28,12 +25,11 @@ function SystemList() {
   
   
       const handleDelete = async (systemName) => {
-        const hatUrl = `http://localhost:8100/api/system_detail/${systemName}/`
-        console.log(hatUrl, systemName)
+        const planetUrl = `http://localhost:8100/api/system_detail/${systemName}/`
         const fetchConfig = {
             method: "DELETE",
         }
-        const response = await fetch(hatUrl, fetchConfig);
+        const response = await fetch(planetUrl, fetchConfig);
         if (response.ok) {
         } else {
             console.error('Failed to delete')

@@ -1,7 +1,6 @@
 import "./card.scss"
-
 import { useEffect, useState } from "react";
-import React, { Component } from "react";
+import React from "react";
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
@@ -13,28 +12,23 @@ function PlanetList() {
 
     async function loadPlanets() {
         const response = await fetch('http://localhost:8100/api/planets_list/');
-        console.log(response)
 
         if (response.ok) {
           const data = await response.json();
           setPlanets(data.planets)
-          console.log(data)
     }
   }
-
 
     useEffect(() => {
         loadPlanets();
     }, []);
 
-
     const handleDelete = async (planetName) => {
-      const hatUrl = `http://localhost:8100/api/planet_detail/${planetName}/`
-      console.log(hatUrl, planetName)
+      const planetUrl = `http://localhost:8100/api/planet_detail/${planetName}/`
       const fetchConfig = {
           method: "DELETE",
       }
-      const response = await fetch(hatUrl, fetchConfig);
+      const response = await fetch(planetUrl, fetchConfig);
       if (response.ok) {
       } else {
           console.error('Failed to delete')

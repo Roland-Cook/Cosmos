@@ -10,10 +10,11 @@ import CreateSystem from "./cosmos/CreateSystem";
 import EditSystem from "./cosmos/EditSystem";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { MouseTrail } from "@stichiboi/react-elegant-mouse-trail";
-import SystemsPlanets from "./cosmos/SystemsPlanetsList";
+// import SystemsPlanets from "./cosmos/SystemsPlanetsList";
 import PlanetSearch from "./cosmos/SearchPlanets";
 import NinjaSearch from "./cosmos/SearchNinja";
-import { NavLink } from "react-router-dom";
+import PeopleSearch from "./cosmos/PeopleInSpace";
+import { NavLink, Link } from "react-router-dom";
 import Picture from "./cosmos/NasaPOTD";
 
 function App() {
@@ -78,7 +79,7 @@ function App() {
     <div className="App">
     <div className="container "> 
     <BrowserRouter>
-    <NavLink className="nav-link" to="/"> <h1 id="main-title">Cosmos</h1></NavLink>
+    <Link className="nav-link" to="/"> <h1 id="main-title">Cosmos</h1></Link>
     </BrowserRouter>
 
     <BrowserRouter>
@@ -91,10 +92,10 @@ function App() {
       <Route path="/planetList" element={<PlanetList/>}/>
       <Route path="/systemList" element={<SystemList/>}/>
       <Route path="/editPlanet" element={<EditPlanet/>}/>
-      <Route path="/systemsPlanets/<:name>" element={<SystemsPlanets/>}/>
       <Route path="/planetSearch" element={<PlanetSearch/>}/>
       <Route path="/ninjaSearch" element={<NinjaSearch/>}/>
       <Route path="/dailyPicture" element={<Picture/>}/>
+      <Route path="/peopleInSpace" element={<PeopleSearch/>}/>
       </Routes>
     </BrowserRouter>
     </div>

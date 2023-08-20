@@ -1,4 +1,3 @@
-import { Fragment } from 'react'
 import "./Style.css"
 
 import { NavLink } from 'react-router-dom';
@@ -11,7 +10,7 @@ function NavBar() {
            <nav id="menu" className='space'>
             <div class="menu-item">
                 <div class="menu-text">
-                    <a href="#">Planets</a>
+                    <h4>Planets</h4>
                 </div>
                 <div class="sub-menu">
                     <div class="icon-box">
@@ -38,7 +37,7 @@ function NavBar() {
 
             <div class="menu-item">
                 <div class="menu-text">
-                    <a href="#">Systems</a>
+                    <h4>Systems</h4>
                 </div>
                 <div class="sub-menu">
                     <div class="icon-box">
@@ -65,7 +64,7 @@ function NavBar() {
 
             <div class="menu-item">
                 <div class="menu-text">
-                    <a href="#">Search Planets</a>
+                    <h4>Search Planets</h4>
                 </div>
                 <div class="sub-menu">
                     <div class="icon-box">
@@ -96,6 +95,7 @@ function NavBar() {
         <div id="info-box">
             <ul>
                 <li><Link to="/dailyPicture"> Astronomy Picture of the Day </Link></li>
+                <li><Link to="/peopleInSpace"> People In Space Now </Link></li>
             </ul>
         </div>
    </>

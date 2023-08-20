@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Search } from 'react-bootstrap-icons';
-import React, { Component } from "react";
+import React from "react";
 import "./searchcard.scss"
+
 import one from "./planetImages/1.jpg"
 import two from "./planetImages/2.jpg"
 import three from "./planetImages/3.jpg"
@@ -15,15 +16,12 @@ const planetImages = [
 one,two,three,four,five,six,seven
 ]
 
-
-function NinjaSearch(e) {
+function NinjaSearch() {
   const randomNumber = Math.floor(Math.random() * planetImages.length)
 
   const [planetName,setPlanetName] = useState('')
     const [planets,setPlanets] = useState([])
     const [random,setRandom] = useState(0)
-
-    
 
     const handlePlanetNameChange = (event) => {
         const value = event.target.value;
@@ -31,11 +29,8 @@ function NinjaSearch(e) {
       }
 
 
-
-  const handleSubmit = async (event) => {
+  const handleSubmit = async () => {
     setRandom(randomNumber)
-
-    // event.preventDefault();
 
     const settings = {
         method: 'GET',
@@ -47,32 +42,24 @@ function NinjaSearch(e) {
         try {
             const response = await fetch(`https://api.api-ninjas.com/v1/planets?name=${planetName}`, settings);
              const data = await response.json();
-            // enter you logic when the fetch is successful
-             console.log(data);
+
              if (response.ok){
               setPlanets(data)
              }
+
            } catch(error) {
-        // enter your logic for when there is an error (ex. error toast)
               console.log(error)
              } 
         }
       asyncGetCall()
-
      }
-       
-
       return (
-        
         <>
-
         
     <div class="search-box">
         <button onClick={handleSubmit}  value={planetName} name={planetName} class="btn-search"><Search/></button>
         <input type="text" onChange={handlePlanetNameChange} class="input-search" placeholder="Type to Search..."/>
     </div>
-
-
 
 {planets.map(planet  => {
   if (planets.length ===1){
@@ -81,7 +68,6 @@ function NinjaSearch(e) {
       <div className="display-planet-info">
       	<div class="product-details">
 		
-	 
 	<h1> Planet Name: {planet.name}</h1>
   <hr style={{width:300}}></hr>
 	
@@ -91,7 +77,7 @@ function NinjaSearch(e) {
     <p class="information">Days in year: {Math.trunc(planet.period)}</p>
 </div>
 <div class="product-image">
-	<img src={planetImages[random]} alt="Omar Dsoky"/>
+	<img src={planetImages[random]} alt="Planet Img"/>
 	
 <div class="info">
 </div>
@@ -101,11 +87,8 @@ function NinjaSearch(e) {
       );
   }
   else{
-    
   }       
     })}
-
-
             </>
       )
       }

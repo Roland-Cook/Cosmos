@@ -119,27 +119,27 @@ return (
         <h1 style={{color:"white"}}>Create a Planet</h1>
         <form onSubmit={handleSubmit} id="planet-form">
           <div className="form-floating mb-3">
-            <input onChange={handleNameChange} value={name} placeholder="Planet Name"  name={name} id="automobileVin" className="form-control"/>
+            <input onChange={handleNameChange} value={name} placeholder="Planet Name"  name={name} className="form-control"/>
             <label htmlFor="name">Name</label>
           </div>
           <div className="form-floating mb-3">
-            <input onChange={handleMassChange} value={mass} placeholder="customer" name={mass} id="customer" className="form-control"/>
+            <input onChange={handleMassChange} value={mass} placeholder="customer" name={mass} className="form-control"/>
             <label htmlFor="manufacturer">Mass</label>
           </div>
           <div className="form-floating mb-3">
-            <input  onChange={handleTemperatureChange} value={temperature} placeholder="date" name={temperature} id="datetime" className="form-control"/>
+            <input  onChange={handleTemperatureChange} value={temperature} placeholder="date" name={temperature}  className="form-control"/>
             <label >Temperature</label>
           </div>
           <div className="form-floating mb-3">
-            <input  onChange={handleDistanceChange} value={distance} placeholder="date" name={distance} id="time" className="form-control"/>
+            <input  onChange={handleDistanceChange} value={distance} placeholder="date" name={distance}  className="form-control"/>
             <label >Distance</label>
           </div>
           <div className="form-floating mb-3">
-            <input onChange={handleDiscoverChange} value={discovered} placeholder="Discovered BY" required name={discovered} id="reason" className="form-control"/>
+            <input onChange={handleDiscoverChange} value={discovered} placeholder="Discovered BY" required name={discovered} className="form-control"/>
             <label htmlFor="picture_url">Discovered By </label>
           </div>
           <div className="form-floating mb-3">
-            <input onChange={handleImageChange} type="url" value={image} placeholder="Image URL" required name={image} id="reason" className="form-control"/>
+            <input onChange={handleImageChange} type="url" value={image} placeholder="Image URL" required name={image}  className="form-control"/>
             <label htmlFor="picture_url">Image URL </label>
   
 
@@ -151,7 +151,7 @@ return (
           </div>
 
           <div className="mb-3">
-            <select onChange={handleSystemChange} name={system} value={system}  id="technician" className="form-select">
+            <select onChange={handleSystemChange} name={system} value={system} className="form-select">
             <option >Choose a System</option>
                 {systems.map(system => {
                   return (

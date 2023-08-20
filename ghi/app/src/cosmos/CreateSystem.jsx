@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
 
 
 function CreateSystem () {
@@ -6,8 +6,6 @@ function CreateSystem () {
 const [name, setName] = useState('');
 const [description,setDescription] = useState('')
 const [image,setImage] = useState('');
-
-
 
 
 
@@ -65,15 +63,15 @@ return (
         <h1 style={{color:"white"}}>Create a System</h1>
         <form onSubmit={handleSubmit} id="planet-form">
           <div className="form-floating mb-3">
-            <input onChange={handleNameChange} value={name} placeholder="Planet Name"  name={name} id="automobileVin" className="form-control"/>
+            <input onChange={handleNameChange} value={name} placeholder="Planet Name"  name={name}  className="form-control"/>
             <label htmlFor="name">Name</label>
           </div>
           <div className="form-floating mb-3">
-            <input onChange={handleImageChange} type="url" value={image} placeholder="Image URL" required name={image} id="reason" className="form-control"/>
+            <input onChange={handleImageChange} type="url" value={image} placeholder="Image URL" required name={image}  className="form-control"/>
             <label htmlFor="picture_url">Image URL </label>
           </div>
           <div className="form-floating mb-3">
-            <textarea onChange={handleDescriptionChange}  value={description} placeholder="Description of planet..."  name={description} id="" className="form-control"/>
+            <textarea onChange={handleDescriptionChange}  value={description} placeholder="Description of planet..."  name={description} className="form-control"/>
             <label >Description </label>
           </div>
 

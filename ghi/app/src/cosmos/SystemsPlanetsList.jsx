@@ -1,19 +1,19 @@
 import "./card.scss"
 
 import { useEffect, useState } from "react";
-import React, { Component } from "react";
+import React from "react";
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+
+// still working on this code
 
 function SystemsPlanets() {
 
     const [planets,setPlanets] = useState([])
 
-
     async function loadPlanets() {
 
         const response = await fetch("http://localhost:8100/api/system_planets/Orion Nebula/");
-        console.log(response)
 
         if (response.ok) {
           const data = await response.json();
@@ -21,19 +21,17 @@ function SystemsPlanets() {
     }
   }
 
-
     useEffect(() => {
         loadPlanets();
     }, []);
 
 
     const handleDelete = async (planetName) => {
-      const hatUrl = `http://localhost:8100/api/planet_detail/${planetName}/`
-      console.log(hatUrl, planetName)
+      const systemUrl = `http://localhost:8100/api/planet_detail/${planetName}/`
       const fetchConfig = {
           method: "DELETE",
       }
-      const response = await fetch(hatUrl, fetchConfig);
+      const response = await fetch(systemUrl, fetchConfig);
       if (response.ok) {
       } else {
           console.error('Failed to delete')

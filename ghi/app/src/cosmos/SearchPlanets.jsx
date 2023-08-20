@@ -9,14 +9,8 @@ import "./searchcard.scss"
 
 function PlanetSearch() {
 
-  
     const [planetName,setPlanetName] = useState('')
     const [planet,setPlanet] = useState('')
-
-    const [planets,setPlanets] = useState([])
-
-
-
     
 
     const handlePlanetNameChange = (event) => {
@@ -24,26 +18,20 @@ function PlanetSearch() {
         setPlanetName(value)
       }
 
+  const handleSubmit = async () => {
 
-
-  const handleSubmit = async (event) => {
-    // event.preventDefault();
-
-
-
-    console.log(planetName)
     const response = await fetch(`http://localhost:8100/api/planet_detail/${planetName}/`);
     if (response.ok) {
       const data = await response.json();
-      console.log(data)
       setPlanet(data)
 }
-  
     
 }
 useEffect(() => {
   handleSubmit();
 }, []);
+
+
   if (planet.length ===0)
       return (
         <> 

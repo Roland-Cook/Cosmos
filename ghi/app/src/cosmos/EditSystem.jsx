@@ -44,7 +44,6 @@ const handleSubmit = async (event) => {
 
 
     const Url = `http://localhost:8100/api/system_detail/${name}/`;
-    console.log(data)
     const fetchConfig = {
       method: "PUT",
       body: JSON.stringify(data),
@@ -70,21 +69,15 @@ const fetchData = async () => {
 
     const response = await fetch(url);
 
-    console.log(response)
     if (response.ok) {
       const data = await response.json();
-
       setSystems(data.systems)
     }
   }
 
-
-
   useEffect(() => {
     fetchData();
   }, []);
-
-
 
 
 return (
@@ -107,15 +100,15 @@ return (
           </div>
 
           <div className="form-floating mb-3">
-            <input  onChange={handleNewNameChange} value={newName} placeholder="newName" name={newName} id="time" className="form-control"/>
+            <input  onChange={handleNewNameChange} value={newName} placeholder="newName" name={newName} className="form-control"/>
             <label>Name</label>
           </div>
           <div className="form-floating mb-3">
-            <input  onChange={handleDescriptionChange} value={description} placeholder="date" name={description} id="time" className="form-control"/>
+            <input  onChange={handleDescriptionChange} value={description} placeholder="date" name={description} className="form-control"/>
             <label>Description</label>
           </div>
           <div className="form-floating mb-3">
-            <input onChange={handleImageChange} type="url" value={image} placeholder="Image URL" name={image} id="reason" className="form-control"/>
+            <input onChange={handleImageChange} type="url" value={image} placeholder="Image URL" name={image} className="form-control"/>
             <label htmlFor="picture_url">Image URL </label>
           </div>
           <button type="submit" className="btn btn-primary">Edit</button>
