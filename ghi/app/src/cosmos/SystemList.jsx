@@ -23,7 +23,13 @@ function SystemList() {
           loadPlanets();
       }, []);
   
-  
+      
+      // async function handleClick(systemId) {
+      //   console.log(systemId)
+      //   setsystemId(systemId)
+      // }
+      // onClick={() => handleClick(system.name)} 
+
       const handleDelete = async (systemName) => {
         const planetUrl = `http://localhost:8100/api/system_detail/${systemName}/`
         const fetchConfig = {
@@ -41,9 +47,9 @@ function SystemList() {
             <div className="f-container">
               {systems.map(system  => {
                 return (
-
                   <Card style={{ width: '18rem' }}>
                   <Card.Img variant="top" src={system.image} style={{ height: 200 }}   /> 
+                  
                   <Card.Body>
                     
                     <Card.Title>{system.name}</Card.Title>

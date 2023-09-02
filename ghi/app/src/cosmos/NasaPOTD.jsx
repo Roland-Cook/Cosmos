@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./card.scss"
-import React, { Component } from "react";
+import React from "react";
 import "./searchcard.scss"
 
 

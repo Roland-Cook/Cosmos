@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import { Search } from 'react-bootstrap-icons';
 import "./card.scss"
-import React, { Component } from "react";
-import Card from 'react-bootstrap/Card';
+import React from "react";
 import "./searchcard.scss"
 
 

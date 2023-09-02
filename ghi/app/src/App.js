@@ -10,16 +10,20 @@ import CreateSystem from "./cosmos/CreateSystem";
 import EditSystem from "./cosmos/EditSystem";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { MouseTrail } from "@stichiboi/react-elegant-mouse-trail";
-// import SystemsPlanets from "./cosmos/SystemsPlanetsList";
 import PlanetSearch from "./cosmos/SearchPlanets";
 import NinjaSearch from "./cosmos/SearchNinja";
 import PeopleSearch from "./cosmos/PeopleInSpace";
 import { NavLink, Link } from "react-router-dom";
 import Picture from "./cosmos/NasaPOTD";
+import SystemDetail from "./cosmos/systemDetail";
+import { useEffect, useState } from "react";
+import React from "react";
+
 
 function App() {
   // converted TS to JS for mouse trail
 
+    
   return (
     <>
   <MouseTrail strokeColor={"white"}></MouseTrail>
@@ -96,6 +100,8 @@ function App() {
       <Route path="/ninjaSearch" element={<NinjaSearch/>}/>
       <Route path="/dailyPicture" element={<Picture/>}/>
       <Route path="/peopleInSpace" element={<PeopleSearch/>}/>
+      {/* <Route path="/systemDetail" element={<SystemDetail/>}/> */}
+
       </Routes>
     </BrowserRouter>
     </div>

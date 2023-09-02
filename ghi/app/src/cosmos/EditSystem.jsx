@@ -77,7 +77,7 @@ const fetchData = async () => {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  });
 
 
 return (
@@ -100,7 +100,7 @@ return (
           </div>
 
           <div className="form-floating mb-3">
-            <input  onChange={handleNewNameChange} value={newName} placeholder="newName" name={newName} className="form-control"/>
+            <input onChange={handleNewNameChange} value={newName} placeholder="newName" name={newName} className="form-control"/>
             <label>Name</label>
           </div>
           <div className="form-floating mb-3">

@@ -3,17 +3,15 @@ import { Search } from 'react-bootstrap-icons';
 import React from "react";
 import "./searchcard.scss"
 
-import one from "./planetImages/1.jpg"
 import two from "./planetImages/2.jpg"
 import three from "./planetImages/3.jpg"
 import four from "./planetImages/4.png"
-import five from "./planetImages/5.jpg"
 import six from "./planetImages/6.jpg"
 import seven from "./planetImages/7.jpg"
 
 
 const planetImages = [
-one,two,three,four,five,six,seven
+two,three,four,six,seven
 ]
 
 function NinjaSearch() {
