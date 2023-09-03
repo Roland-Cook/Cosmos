@@ -14,7 +14,6 @@ function PeopleSearch() {
         const data = await response.json();
         setPeople(data.people)
         setTotal(data.number)
-        console.log(data)
   }
     
   }

@@ -20,10 +20,12 @@ import { useEffect, useState } from "react";
 import React from "react";
 
 
+
 function App() {
   // converted TS to JS for mouse trail
 
-    
+  const [system, setSystem] = useState("");
+
   return (
     <>
   <MouseTrail strokeColor={"white"}></MouseTrail>
@@ -94,13 +96,13 @@ function App() {
       <Route path="/createPlanet" element={<CreatePlanet/>}/> 
       <Route path="/" element={<MainPage/>}/>
       <Route path="/planetList" element={<PlanetList/>}/>
-      <Route path="/systemList" element={<SystemList/>}/>
+      <Route path="/systemList"  element={<SystemList setSystem = {setSystem}/>} />
       <Route path="/editPlanet" element={<EditPlanet/>}/>
       <Route path="/planetSearch" element={<PlanetSearch/>}/>
       <Route path="/ninjaSearch" element={<NinjaSearch/>}/>
       <Route path="/dailyPicture" element={<Picture/>}/>
       <Route path="/peopleInSpace" element={<PeopleSearch/>}/>
-      {/* <Route path="/systemDetail" element={<SystemDetail/>}/> */}
+      <Route path="/systemDetail" element={<SystemDetail system = {system}/>} />
 
       </Routes>
     </BrowserRouter>

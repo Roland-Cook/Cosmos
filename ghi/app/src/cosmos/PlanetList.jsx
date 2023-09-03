@@ -9,7 +9,6 @@ function PlanetList() {
     const [planets,setPlanets] = useState([])
 
 
-
     async function loadPlanets() {
         const response = await fetch('http://localhost:8100/api/planets_list/');
 

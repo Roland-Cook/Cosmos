@@ -5,24 +5,25 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
 
+
+
 function SystemDetail(props) {
-    const [planets,setPlanets] = useState([])
+  const [systems,setSystems] = useState([])
+  console.log(props.system)
 
     async function loadPlanets() {
-        const response = await fetch(`http://localhost:8100/api/system_planets/Solar System/`);
-        console.log(response)
+        const response = await fetch(`http://localhost:8100/api/system_planets/${props.system}`);
 
         if (response.ok) {
           const data = await response.json();
-          console.log(data)
-          setPlanets(data.system_planets)
+          setSystems(data.system_planets)
     }
   }
 
 
     useEffect(() => {
         loadPlanets();
-    }, []);
+    });
 
     const handleDelete = async (planetName) => {
       const planetUrl = `http://localhost:8100/api/planet_detail/${planetName}/`
@@ -39,26 +40,26 @@ function SystemDetail(props) {
     return (
       <>
           <div className="f-container">
-            {planets.map(planet  => {
+            {systems.map(planet  => {
               return (
-              //   <Card style={{ width: '18rem' }}>
-              //   <Card.Img variant="top" src={planet.image} style={{ height: 200 }}  />
-              //   <Card.Body>
-              //     <Card.Title>{planet.name}</Card.Title>
-              //     <Card.Text>
-              //       {planet.description}
-              //     </Card.Text>
-              //     <Card.Text>Mass: {planet.mass}</Card.Text>
-              //      <Card.Text>Temperature: {planet.temperature}</Card.Text>
-              //       <Card.Text>Discovered By: {planet.discovered_by}</Card.Text>
-              //       <Card.Text>System: {planet.system.name}</Card.Text>
-              //     <Button className="card-button" onClick={() => handleDelete(planet.name)}>Delete Planet</Button>
-              //   </Card.Body>
-              // </Card>
-              <h1>{planet.name}</h1>
-                );
-              
-    })}
+                <>
+                <Card style={{ width: '18rem' }}>
+                <Card.Img variant="top" src={planet.image} style={{ height: 200 }}  />
+                <Card.Body>
+                  <Card.Title>{planet.name}</Card.Title>
+                  <Card.Text>
+                    {planet.description}
+                  </Card.Text>
+                  <Card.Text>Mass: {planet.mass}</Card.Text>
+                   <Card.Text>Temperature: {planet.temperature}</Card.Text>
+                    <Card.Text>Discovered By: {planet.discovered_by}</Card.Text>
+                    <Card.Text>System: {planet.system.name}</Card.Text>
+                  <Button className="card-button" onClick={() => handleDelete(planet.name)}>Delete Planet</Button>
+                </Card.Body>
+              </Card>
+              </>
+                ); 
+    })}        
     </div>
           </>
     )
