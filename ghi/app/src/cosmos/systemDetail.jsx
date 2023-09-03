@@ -9,7 +9,6 @@ import Card from 'react-bootstrap/Card';
 
 function SystemDetail(props) {
   const [systems,setSystems] = useState([])
-  console.log(props.system)
 
     async function loadPlanets() {
         const response = await fetch(`http://localhost:8100/api/system_planets/${props.system}`);
