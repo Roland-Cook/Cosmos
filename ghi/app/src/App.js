@@ -18,7 +18,7 @@ import Picture from "./cosmos/NasaPOTD";
 import SystemDetail from "./cosmos/systemDetail";
 import { useEffect, useState } from "react";
 import React from "react";
-
+import Footer from "./cosmos/Footer";
 
 
 function App() {
@@ -103,11 +103,15 @@ function App() {
       <Route path="/dailyPicture" element={<Picture/>}/>
       <Route path="/peopleInSpace" element={<PeopleSearch/>}/>
       <Route path="/systemDetail" element={<SystemDetail system = {system}/>} />
-
+      
       </Routes>
+      <Footer/>
+
     </BrowserRouter>
+
     </div>
     </div>
+
     </>
   );
 }

@@ -1,3 +1,8 @@
+
+*{
+  overflow: visible;
+}
+
 @mixin sp-layout {
     @media screen and (max-width: 750px) {
       @content;

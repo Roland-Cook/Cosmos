@@ -15,7 +15,7 @@ body {
     font-family: 'Roboto', sans-serif;
     height: 100vh;
     background-size: cover;
-    overflow: hidden;
+    overflow-x: hidden;
     width: 100vw;
 }
 
@@ -68,7 +68,6 @@ nav .menu-text a:hover {
     position: absolute;
     z-index: -1;
     min-width: 100%;
-    top: 200.5em;
     width: 100%;
 }
 
@@ -325,9 +324,10 @@ nav .menu-item:nth-of-type(3).highlight:hover ~ #sub-menu-container #sub-menu-ho
 nav .menu-item.highlight:hover ~ #sub-menu-container #sub-menu-holder #sub-menu-bottom { opacity: 1; }
 
 #info-box {
-    position: absolute;
-    bottom: 2em;
-    right: 2em;
+    position: fixed;
+    top: 85%;
+    right: 12em;
+    margin-top: 50px;
 }
 
 #info-box ul {

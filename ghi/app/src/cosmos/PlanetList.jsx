@@ -20,7 +20,7 @@ function PlanetList() {
 
     useEffect(() => {
         loadPlanets();
-    }, []);
+    }, [planets]);
 
     const handleDelete = async (planetName) => {
       const planetUrl = `http://localhost:8100/api/planet_detail/${planetName}/`
