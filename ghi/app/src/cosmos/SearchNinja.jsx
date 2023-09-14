@@ -17,7 +17,7 @@ two,three,four,six,seven
 function NinjaSearch() {
   const randomNumber = Math.floor(Math.random() * planetImages.length)
 
-  const [planetName,setPlanetName] = useState('')
+    const [planetName,setPlanetName] = useState('')
     const [planets,setPlanets] = useState([])
     const [random,setRandom] = useState(0)
 
