@@ -56,10 +56,11 @@ I've built several features to encourage the original image I had in mind when c
 
 ![grab-landing-page](./gifs/SearchNinja.gif)
 
-<h3> On the bottom right users can access Nasa's Astronomy Picture of The Day. </h3>
+<h3> On the bottom right users can access Nasa's Astronomy Picture of The Day. And they can also see the people currently in space according to the people in space API. </h3>
 
 ![grab-landing-page](./gifs/POTD.gif)
 
+![grab-landing-page](./gifs/PIS.gif)
 
 
 
