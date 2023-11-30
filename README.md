@@ -10,9 +10,11 @@ Cosmos was created using Django for the backend and react for the front end. Thi
 
 This application was built to model planets, planetary systems and the overall navigation of celestial bodies. 
 
-Cosmos was created utilizing CRUD methodologies while making various API calls. I used two third party API in the creation of this application. 
+Cosmos was created utilizing CRUD methodologies while making various API calls. I used three third party APIs in the creation of this application. 
 
-Nasa's API to grab the picture of the day along with its description and Ninjas Planet API to make it possible to search through thousands of planets and pull information about the planet.
+- Nasa's API to grab the picture of the day along with its description
+- Ninjas Planet API to make it possible to search through thousands of planets and pull information about the planet.
+- People in Space API to see all the people that are currently in space.
 
 When using this application please note that you cannot have two planets with the same name. Also when searching for planets using Ninjas search you will notice that the planet image is static, that is because Ninjas API does not contain imagery for its planets.
 
@@ -54,10 +56,11 @@ I've built several features to encourage the original image I had in mind when c
 
 ![grab-landing-page](./gifs/SearchNinja.gif)
 
-<h3> On the bottom right users can access Nasa's Astronomy Picture of The Day. </h3>
+<h3> On the bottom right users can access Nasa's Astronomy Picture of The Day. And they can also see the people currently in space according to the people in space API. </h3>
 
 ![grab-landing-page](./gifs/POTD.gif)
 
+![grab-landing-page](./gifs/PIS.gif)
 
 
 
