@@ -1,7 +1,6 @@
 
 *{
   overflow: visible;
-  
 }
 
 @mixin sp-layout {
@@ -197,4 +196,57 @@
 
 .form-planet{
   margin-top: -50px;
+}
+
+@media screen and (max-width: 768px) {
+
+  #menu{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    cursor: pointer;
+  }
+  .menu-item{
+    margin: 20px;
+    height: 2.5rem;
+    max-height: 3rem;
+  }
+
+  #info-box {
+    display: flex;
+    margin-left: 30px;
+    position: sticky;
+  }
+  #main-title{
+    margin-left: 20vw;
+  }
+
+}
+
+
+@media screen and (max-width: 1300px) {
+
+  #menu{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 40%;
+    cursor: pointer;
+  }
+  .menu-item{
+    margin: 20px;
+    height: 2.5rem;
+    max-height: 3rem;
+  }
+
+  #info-box {
+    display: flex;
+    margin-left: 50vw;
+    position: sticky;
+  }
+  #main-title{
+    margin-left: 30vw;
+  }
+
 }

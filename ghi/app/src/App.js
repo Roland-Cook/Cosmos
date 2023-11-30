@@ -19,11 +19,13 @@ import SystemDetail from "./cosmos/systemDetail";
 import { useEffect, useState } from "react";
 import React from "react";
 import Footer from "./cosmos/Footer";
-
+import { redirect, useNavigate } from "react-router-dom";
 
 function App() {
   // converted TS to JS for mouse trail
-
+  function SendHome (){
+    useNavigate("/")
+  }
   const [system, setSystem] = useState("");
 
   return (
@@ -82,10 +84,12 @@ function App() {
   <div class="star"></div>
 </div>
 
+    
+
     <div className="App">
-    <div className="container "> 
+    <div className="container"> 
     <BrowserRouter>
-    <Link className="nav-link" to="/"> <h1 id="main-title">Cosmos</h1></Link>
+    <Link className="nav-link" to="/" onClick={SendHome}> <h1 id="main-title">Cosmos</h1></Link>
     </BrowserRouter>
 
     <BrowserRouter>

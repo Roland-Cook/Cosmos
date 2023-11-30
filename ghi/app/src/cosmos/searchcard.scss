@@ -171,3 +171,72 @@
 .info{
 	font-size: 30px;
 }
+
+
+@media screen and (max-width: 1300px) {
+
+  #info-box{
+	margin-top: 20vw;
+  }
+
+  #info-box a {
+    display: flex;
+    position: sticky;
+  }
+  .display-planet-info{
+	display: flex;
+	margin-top: 10vh;
+	margin-left: 10vw;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+  }
+  .product-details{
+	width: 500px;
+	
+  }
+
+}
+
+@media screen and (max-width: 500px) {
+
+	#info-box{
+	  margin-top: 20vw;
+	}
+  
+	#info-box a {
+	  display: flex;
+	  position: sticky;
+	}
+	.display-planet-info{
+	  display: flex;
+	  margin-top: 10vh;
+	  margin-left: 10vw;
+	  flex-direction: column;
+	  justify-content: center;
+	  align-items: center;
+	  text-align: center;
+	}
+	.product-details{
+	  width: 400px;
+	}
+	.product-image{
+		max-width: 300px;
+	}
+	.product-image img{
+		max-width: 300px;
+		height: 200px;
+		margin-bottom: 10vw;
+		object-fit: fill;
+	}
+	.search-box{
+		width: 200px;
+	}
+	.btn-search{
+		width: 200px;
+	}
+
+  
+  }
+  

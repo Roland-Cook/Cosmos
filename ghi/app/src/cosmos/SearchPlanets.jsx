@@ -43,12 +43,12 @@ useEffect(() => {
       else{
     return(
       <>
-          <div class="search-box">
+          <div className="search-box">
         <button onClick={handleSubmit}  value={planetName} name={planetName} class="btn-search"><Search/></button>
-        <input type="text" onChange={handlePlanetNameChange} class="input-search" placeholder="Type to Search..."/>
+        <input type="text" onChange={handlePlanetNameChange} className="input-search" placeholder="Type to Search..."/>
     </div>
       <div className="display-planet-info">
-      <div class="product-details">
+      <div className="product-details">
       <h1> Planet Name: {planet.name}</h1>
       <hr style={{width:300}}></hr>
     
@@ -57,7 +57,7 @@ useEffect(() => {
         <p class="information">Planet Temperature: {planet.temperature}</p>
         <p class="information">Discovered By: {planet.discovered_by}</p>
     </div>
-    <div class="product-image">
+    <div className="product-image">
       <img src={planet.image} alt=""/>
       
     <div class="info">
