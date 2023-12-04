@@ -63,11 +63,15 @@ I've built several features to encourage the original image I had in mind when c
 ![grab-landing-page](./gifs/PIS.gif)
 
 
+## Mobile Responsiveness
 
+![grab-landing-page](./gifs/HomePage.gif)
+![grab-landing-page](./gifs/CreatedPlanets.gif)
+![grab-landing-page](./gifs/NinjaSearch.gif)
 
 
 ## Technologies 
 HTML, CSS, JS, Python, React, Django, SASS, Bootstrap
 
 ## Project status
-Still being worked on, I plan to add a couple more features pertaining to API calls and working with outside data. I am also looking into making this application mobile responsive via media quieries. 
+Completed responsiveness on all device sizes. Thinking of adding another section to the application to also view discovered stars.
