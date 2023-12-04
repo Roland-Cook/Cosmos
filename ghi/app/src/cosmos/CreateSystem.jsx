@@ -24,7 +24,7 @@ const handleNameChange = (event) => {
     setImage(value);
   }
 
-  
+    // sends a post request with the data recorded in the functions above 
 
 const handleSubmit = async (event) => {
     event.preventDefault();
@@ -45,7 +45,7 @@ const handleSubmit = async (event) => {
     };
 
     const response = await fetch(Url, fetchConfig);
-
+      // if the response goes through ok reset all the fields to an empty string
     if (response.ok) {
       setName('');
       setImage('')
@@ -63,7 +63,7 @@ return (
         <h1 style={{color:"white"}}>Create a System</h1>
         <form onSubmit={handleSubmit} id="planet-form">
           <div className="form-floating mb-3">
-            <input onChange={handleNameChange} value={name} placeholder="Planet Name"  name={name}  className="form-control"/>
+            <input onChange={handleNameChange} value={name} placeholder="Planet Name" name={name}  className="form-control"/>
             <label htmlFor="name">Name</label>
           </div>
           <div className="form-floating mb-3">

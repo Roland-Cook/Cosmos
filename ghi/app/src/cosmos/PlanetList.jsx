@@ -18,10 +18,12 @@ function PlanetList() {
     }
   }
 
+    // to update the list after a planet gets deleted
     useEffect(() => {
         loadPlanets();
     }, [planets]);
 
+        // sends a Delete request with the planetname to localhost 8100
     const handleDelete = async (planetName) => {
       const planetUrl = `http://localhost:8100/api/planet_detail/${planetName}/`
       const fetchConfig = {

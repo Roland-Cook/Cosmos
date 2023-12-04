@@ -10,6 +10,7 @@ const [image, setImage] = useState('');
 const [systems,setSystems] = useState([]);
 
 
+  // Functions to update the state as the user is inputting information
 
 const handleNameChange = (event) => {
     const value = event.target.value;
@@ -32,7 +33,7 @@ const handleNameChange = (event) => {
   }
 
 
-
+    // sends a PUT request with the data recorded in the functions above 
 const handleSubmit = async (event) => {
     event.preventDefault();
    
@@ -54,6 +55,8 @@ const handleSubmit = async (event) => {
 
     const response = await fetch(Url, fetchConfig);
 
+      // if the response goes through ok reset all the fields to an empty string
+    
     if (response.ok) {
       setName('')
       setNewName('');
@@ -70,6 +73,7 @@ const fetchData = async () => {
 
     if (response.ok) {
       const data = await response.json();
+        // Takes the data from the above call and puts it into a piece of state
       setSystems(data.systems)
     }
   }
@@ -103,12 +107,12 @@ return (
             <label>Name</label>
           </div>
           <div className="form-floating mb-3">
-            <input  onChange={handleDescriptionChange} value={description} placeholder="date" name={description} className="form-control"/>
+            <input  onChange={handleDescriptionChange} value={description} placeholder="description" name={description} className="form-control"/>
             <label>Description</label>
           </div>
           <div className="form-floating mb-3">
             <input onChange={handleImageChange} type="url" value={image} placeholder="Image URL" name={image} className="form-control"/>
-            <label htmlFor="picture_url">Image URL </label>
+            <label htmlFor="Image URL">Image URL </label>
           </div>
           <button type="submit" className="btn btn-primary">Edit</button>
         </form>

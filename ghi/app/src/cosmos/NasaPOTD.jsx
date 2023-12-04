@@ -12,12 +12,14 @@ function Picture() {
   const handleSubmit = async (event) => {
 
     const response = await fetch(`https://api.nasa.gov/planetary/apod?api_key=fpbF4huSJNHXSw8bkV2TwYcxeGsvcVCagmxF3RrJ`);
+
     if (response.ok) {
       const data = await response.json();
       setPlanet(data)
 }
   
 }
+
 useEffect(() => {
   handleSubmit();
 }, []);
@@ -25,7 +27,7 @@ useEffect(() => {
       return (
         <>
         <div className="potd">
-        <img  src={planet.hdurl} alt="" />
+        <img src={planet.hdurl} alt="" />
         <p>{planet.explanation}</p>
         </div>
         </>

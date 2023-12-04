@@ -15,12 +15,16 @@ two,three,four,six,seven
 ]
 
 function NinjaSearch() {
+    // generates a random number and stores it in a piece of state
+    // that number is used to pick a planet image at random each time a request is made
+
   const randomNumber = Math.floor(Math.random() * planetImages.length)
 
     const [planetName,setPlanetName] = useState('')
     const [planets,setPlanets] = useState([])
     const [random,setRandom] = useState(0)
 
+      // records the planet thats typed in to send to ninjas api
     const handlePlanetNameChange = (event) => {
         const value = event.target.value;
         setPlanetName(value)
@@ -36,6 +40,7 @@ function NinjaSearch() {
         
     };
 
+    // sends a call the the api using the planetName that was typed in
     const asyncGetCall = async () => {
         try {
             const response = await fetch(`https://api.api-ninjas.com/v1/planets?name=${planetName}`, settings);

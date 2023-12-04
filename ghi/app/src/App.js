@@ -23,9 +23,13 @@ import { redirect, useNavigate } from "react-router-dom";
 
 function App() {
   // converted TS to JS for mouse trail
+
+  // navigates user back home on click
   function SendHome (){
     useNavigate("/")
   }
+
+  // state used to determine the system that was clicked on
   const [system, setSystem] = useState("");
 
   return (
@@ -107,7 +111,6 @@ function App() {
       <Route path="/dailyPicture" element={<Picture/>}/>
       <Route path="/peopleInSpace" element={<PeopleSearch/>}/>
       <Route path="/systemDetail" element={<SystemDetail system = {system}/>} />
-      
       </Routes>
       <Footer/>
 
