@@ -1,4 +1,4 @@
-# Comos
+# Cosmos
 
 
 
