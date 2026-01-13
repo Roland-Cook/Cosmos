@@ -45,7 +45,7 @@ I've built several features to encourage the original image I had in mind when c
 ![grab-landing-page](./gifs/CreateSystem.gif)
 
 
-<h3> Under search planets users have the ability to search through any planets they defined within the application to that planets particular information. </h3>
+<h3> Under search planets users have the ability to search through any planets they defined within the application to GET that planets particular information. </h3>
 
 ![grab-landing-page](./gifs/YourSearch.gif)
 
