@@ -16,7 +16,7 @@ services:
   database: 
     image: postgres:14.2-bullseye
     volumes:
-      - personalProject:/var/lib/postgresql/data
+      - personalProject:/varS/lib/postgresql/data
       - ./db:/docker-entrypoint-initdb.d
     environment:
       - POSTGRES_MULTIPLE_DATABASES=planets
@@ -35,10 +35,9 @@ services:
     depends_on:
       - database
     environment:
-      DATABASE_URL: postgres://planets:password@database:5432/planets
+      DATABASE_URL: postgres://postgres:test-databases@database:5432/planets
       WAIT_HOSTS: database:5432
       WAIT_TIMEOUT: 240
-      
 volumes:
   personalProject:
     external: true
