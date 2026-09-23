@@ -1,13 +1,14 @@
 {
-  "devDependencies": {
-    "tailwindcss": "^3.3.3"
-  },
   "dependencies": {
     "@headlessui/react": "^1.7.16",
     "@heroicons/react": "^2.0.18",
     "dat.gui": "^0.7.9",
-    "node-sass": "^9.0.0",
     "sass": "^1.65.1",
     "three": "^0.155.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.15",
+    "postcss": "^8.4.28",
+    "tailwindcss": "^4.3.3"
   }
 }
