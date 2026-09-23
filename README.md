@@ -40,7 +40,7 @@ I've built several features to encourage the original image I had in mind when c
 
 
 
-<h3> Users can also define planetary systems within this application, these systems are tied to planets using foreign keys. </h3>
+<h3> Users can also define planetary systems within this application, these systems and planets are tied together using foreign keys. </h3>
 
 ![grab-landing-page](./gifs/CreateSystem.gif)
 
